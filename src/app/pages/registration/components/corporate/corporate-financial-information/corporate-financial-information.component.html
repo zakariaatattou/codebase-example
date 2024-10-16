@@ -1,0 +1,37 @@
+<form class="flex flex-column"
+      [formGroup]="x">
+    <!-- Net income for most recent fiscal year? -->
+    <div class="input-box">
+        <h3>{{ "Net income for most recent fiscal year" | translate}}</h3>
+        <div class="flex gap-4 justify-content-between flex-column lg:flex-row">
+            <div class="custom-radio-input"
+                 *ngFor="let item of  $netIncomesList; let i = index">
+                <input type="radio"
+                       [value]="item.id"
+                       formControlName="netIncome"
+                       [id]="'netIncome' + i">
+                <label [for]="'netIncome' + i">
+                    <div class="circle"></div>
+                    {{item.name}}
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- Net assets in most recent fiscal year -->
+    <div class="input-box">
+        <h3>{{ "Net assets in most recent fiscal year" | translate}}</h3>
+        <div class="flex gap-4 justify-content-between flex-column lg:flex-row">
+            <div class="custom-radio-input"
+                 *ngFor="let item of  $netAssetsList; let i = index">
+                <input type="radio"
+                       [value]="item.id"
+                       formControlName="netAssets"
+                       [id]="'netAssets' + i">
+                <label [for]="'netAssets' + i">
+                    <div class="circle"></div>
+                    {{item.name}}
+                </label>
+            </div>
+        </div>
+    </div>
+</form>

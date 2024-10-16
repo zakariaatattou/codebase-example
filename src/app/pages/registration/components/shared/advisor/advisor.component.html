@@ -1,0 +1,112 @@
+<div class="advisor-container grid m-0">
+    <ng-container *ngIf="mode === 'listing'">
+        <div class=" col-12 lg:col-6">
+            <div class="advisor-card">
+                <img alt="">
+                <h3>Adam Johns</h3>
+                <p>Seasoned finance professional with 15+ years of expertise in portfolio management and risk
+                    assessment.
+                </p>
+                <button (click)="onSelectAdvisor(advisors[0])"
+                        class="btn btn-primary-outline">
+                    {{ "Pick an advisor for me" | translate}}
+                </button>
+            </div>
+        </div>
+        <div class=" col-12 lg:col-6"
+             *ngFor="let item of advisors">
+            <div class="advisor-card">
+                <img [src]="item.photo"
+                     alt="">
+                <h3>{{item.firstName + " " + item.lastName}}</h3>
+                <p>{{ item.details }}
+                </p>
+                <button (click)="onSelectAdvisor(item)"
+                        class="btn btn-primary-outline">
+                    {{ "advisor.select" | translate}}
+                </button>
+            </div>
+        </div>
+
+    </ng-container>
+
+    <ng-container *ngIf="mode === 'single'">
+        <form [formGroup]="x">
+            <div class="flex flex-column align-items-startt gap-4">
+                <button (click)="onUnselectAdvisor()"
+                        class="btn-link btn-link-secondary w-fit">
+                    <i class="pi pi-chevron-left"></i>
+                    Back</button>
+                <div class="single-card">
+                    <div class="profile">
+                        <img [src]="selectedAdvisor.photo"
+                             alt="">
+                        <div class="details">
+                            <h3>{{selectedAdvisor.firstName + " " + selectedAdvisor.lastName}}</h3>
+                            <p>{{ selectedAdvisor.details }}</p>
+                        </div>
+                    </div>
+
+                    <div class="compliance-checks">
+                        <div class="compliance">
+                            <p-checkbox [binary]="true"
+                                        [formControl]="x.get('kyc')"
+                                        inputId="kyc" />
+                            <label for="kyc">{{ "I consent to the KYC (Know Your Customer) process by GrowWise. " |
+                                translate
+                                }} </label>
+                        </div>
+                        <div class="compliance">
+                            <p-checkbox [binary]="true"
+                                        [readonly]="true"
+                                        [formControl]="x.get('rdi')"
+                                        (click)="onRDIComplianceChange()"
+                                        inputId="rdi" />
+                            <label for="rdi">{{ "I agree to the RDI (Realstionship Disclosure Information agreement)" |
+                                translate }} </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </ng-container>
+
+</div>
+
+
+<!-- Modal -->
+<p-dialog header="Realstionship Disclosure Information agreement"
+          [modal]="true"
+          [(visible)]="visible"
+          [style]="{ width: '50rem' }"
+          [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
+    <p class="mb-5">
+        Lorem ipsum dolor sit amet...
+    </p>
+    <p class="mb-5">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque provident similique doloremque voluptatem
+        dolorem magni laboriosam, labore iure consectetur. At eum nihil asperiores consectetur aliquid consequatur quos
+        nemo, quidem exercitationem?
+    </p>
+    <p class="mb-5">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque provident similique doloremque voluptatem
+        dolorem magni laboriosam, labore iure consectetur. At eum nihil asperiores consectetur aliquid consequatur quos
+        nemo, quidem exercitationem?
+    </p>
+    <p class="mb-5">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+    </p>
+    <p class="mb-5">
+        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...
+    </p>
+    <p>
+        At vero eos et accusamus et iusto odio dignissimos...
+    </p>
+
+    <div class="flex gap-2 justify-content-end mt-4">
+        <button class="btn btn-seondary"
+                (click)="visible = false">Cancel</button>
+        <button class="btn btn-primary"
+                (click)="onAgreeToRDI()">Agree</button>
+    </div>
+</p-dialog>

@@ -1,0 +1,32 @@
+<div class="opportunities-container">
+    <div class="opportunities-inner">
+        <!-- Title -->
+        <div class="title">
+            <h2>
+                {{content?.opportunities?.blackLabel}} <span> {{content?.opportunities?.orangeLabel}}</span>
+            </h2>
+            <p>
+              {{content?.opportunities?.description}}
+            </p>
+        </div>
+        <!-- Cards -->
+        <div class="opportunities-cards grid">
+            <div class="col">
+                <app-opportunity-card></app-opportunity-card>
+            </div>
+            <div class="col">
+                <app-opportunity-card [variation]="'variation-2'"></app-opportunity-card>
+            </div>
+            <div class="col">
+                <app-opportunity-card [variation]="'variation-2'"></app-opportunity-card>
+            </div>
+        </div>
+        <!-- CTA -->
+        <a [routerLink]="'/' + routes.opportunities"
+           class="cta">
+            <button class="btn btn-primary-outline">
+              {{content?.opportunities?.buttonLabel}}
+            </button>
+        </a>
+    </div>
+</div>

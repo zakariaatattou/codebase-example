@@ -1,0 +1,17 @@
+<div class="branding-container ">
+    <a [routerLink]="'/' + routes.home">
+        <img src="assets/images/logo.svg"
+             alt="">
+    </a>
+    <div class="text">
+        <h3>{{brandingContentData?.Details?.Header}}
+        </h3>
+        <p>
+            {{brandingContentData?.Details?.Details}}
+        </p>
+    </div>
+
+    <ng-content></ng-content>
+
+    <p class="version">V: {{version}}</p>
+</div>

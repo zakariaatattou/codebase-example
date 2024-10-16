@@ -1,0 +1,283 @@
+// Floating Label input
+.p-float-label {
+    label {
+        font-weight: 400 !important;
+        font-size: 1rem !important;
+        line-height: 140%;
+        color: #666666 !important;
+        transform: translateY(-50%);
+        margin-top: 0 !important;
+        top: 50%;
+        position: absolute;
+    }
+
+    input {
+        width: 100% !important;
+        padding: 1rem;
+        height: 4rem;
+        background: #FFFFFF;
+        border: 1px solid #D6D6D6;
+        border-radius: 12px;
+        font-weight: 500;
+        font-size: 1rem;
+        color: #1D1F1F;
+
+        &.ng-invalid.ng-touched {
+            border: 1px solid red;
+        }
+
+        &:focus {
+            border: 1px solid #F2A413;
+            box-shadow: 0px 0px 0px 4px #FDF0D8;
+        }
+
+
+        &:focus,
+        &.p-filled {
+            padding-top: 1.5rem;
+        }
+
+        &:focus+label,
+        &.p-filled+label {
+            font-weight: 400;
+            font-size: .75rem !important;
+            line-height: 140%;
+            top: .875rem;
+            left: 1rem;
+        }
+    }
+
+    .p-inputwrapper-filled+label,
+    .p-inputwrapper-focus+label {
+        font-weight: 400;
+        font-size: .75rem !important;
+        line-height: 140%;
+        top: .875rem;
+        left: 1rem;
+    }
+
+}
+
+// Password input
+.p-password-mask {
+    &.ng-invalid.ng-touched input {
+        border: 1px solid red;
+    }
+}
+
+.p-password-input,
+.p-password {
+    width: 100%;
+
+
+}
+
+// Text input
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+
+    label {
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 140%;
+        color: #333333;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+    }
+
+    input {
+        padding: .5rem 1rem;
+        height: 56px;
+        width: 100%;
+        background: #FFFFFF;
+        border: 1px solid #D6D6D6;
+        border-radius: 12px;
+
+        &:focus {
+            outline: none !important;
+            border: 1px solid #F2A413;
+            box-shadow: 0px 0px 0px 4px #FDF0D8;
+        }
+
+    }
+
+    .error {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        color: red;
+
+        span {
+            font-size: .875rem;
+        }
+    }
+}
+
+// Datepicker
+.p-calendar {
+    width: 100%;
+}
+
+// Drodpdown
+.p-dropdown {
+    padding: 8px 16px;
+    height: 56px;
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #D6D6D6;
+    border-radius: 12px;
+
+    .p-dropdown-filter {
+        border-color: transparent;
+        height: 46px;
+
+        &:focus,
+        &:active {
+            border-color: transparent;
+            box-shadow: none;
+        }
+    }
+}
+
+.p-inputwrapper-focus {
+    outline: none !important;
+    border-color: #F2A413;
+    box-shadow: 0px 0px 0px 4px #FDF0D8;
+    border-radius: 12px;
+
+}
+
+.p-dropdown-label {
+    display: flex;
+    align-items: center;
+    // font-weight: 500;
+    // font-size: 1rem !important;
+    // color: #1D1F1F;
+}
+
+
+.p-dropdown-trigger {
+    width: 1rem;
+}
+
+
+.p-open {
+    background: #FFFFFF;
+    border: 1px solid #D6D6D6;
+}
+
+
+// Radio box
+.custom-radio-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+
+    label {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        background: #FFFFFF;
+        border: 1px solid #D6D6D6;
+        border-radius: 8px;
+        width: 100%;
+        padding: 1.125rem 1rem;
+        cursor: pointer;
+    }
+
+
+    .circle {
+        min-width: 1rem;
+        width: 1rem;
+        height: 1rem;
+        border: 1.5px solid #D1D1DB;
+        // position: absolute;
+        // top: 50%;
+        // left: .875rem;
+        // transform: translateY(-50%);
+        border-radius: 50px;
+    }
+
+    input {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+
+        &:checked+label {
+            background: #FEF6E7;
+            border: 1px solid #F2A413;
+
+            .circle {
+                border-color: #F2A413;
+                background-color: white;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translateY(-50%) translateX(-50%);
+                    width: 8px;
+                    height: 8px;
+                    background: #F2A413;
+                    border-radius: 50px;
+                }
+            }
+        }
+    }
+
+
+
+
+}
+
+// Checkbox box
+.custom-checkbox-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+
+    label {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background: #FFFFFF;
+        border: 1px solid #D6D6D6;
+        border-radius: 8px;
+        width: 100%;
+        padding: 1.125rem 3rem;
+        cursor: pointer;
+    }
+
+    .p-checkbox {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: .875rem;
+        transform: translateY(-50%);
+    }
+}
+
+.p-checkbox-box {
+    box-shadow: none;
+
+    &:hover {
+        border-color: $color-primary;
+    }
+}
+
+.p-checkbox-box.p-highlight {
+    background-color: $color-primary;
+    border-color: $color-primary;
+}

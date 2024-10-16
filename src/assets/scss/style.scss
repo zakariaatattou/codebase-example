@@ -1,0 +1,95 @@
+@import "./utils/variables.scss";
+@import "./components/button.scss";
+@import "./components/input.scss";
+
+@font-face {
+    font-family: 'ROCA';
+    src: url('../font/Roca Black.ttf') format('truetype'),
+        url('../font/Roca Bold.ttf') format('truetype'),
+        url('../font/Roca Heavy.ttf') format('truetype'),
+        url('../font/Roca Italic.ttf') format('truetype'),
+        url('../font/Roca Light.ttf') format('truetype'),
+        url('../font/Roca Regular.ttf') format('truetype'),
+        url('../font/Roca Thin.ttf') format('truetype'),
+        url('../font/Roca Two Black.ttf') format('truetype'),
+        url('../font/Roca Two Bold.ttf') format('truetype'),
+        url('../font/Roca Two Heavy.ttf') format('truetype'),
+        url('../font/Roca Two Light.ttf') format('truetype'),
+        url('../font/Roca Two Regular.ttf') format('truetype'),
+        url('../font/Roca Two Thin.ttf') format('truetype'), ;
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* You can add global styles to this file, and also import other style files */
+* {
+    // margin: 0;
+    // padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* Order */
+@layer reset, primeng;
+
+/* Reset CSS */
+@layer reset {
+
+    div:not(.p-element):not(.p-component),
+    p:not(.p-element):not(.p-component),
+    span:not(.p-element):not(.p-component),
+    a:not(.p-element):not(.p-component),
+    ul:not(.p-element):not(.p-component),
+    li:not(.p-element):not(.p-component),
+    body:not(.p-element):not(.p-component),
+    h1:not(.p-element):not(.p-component),
+    h2:not(.p-element):not(.p-component),
+    h3:not(.p-element):not(.p-component),
+    h4:not(.p-element):not(.p-component),
+    h5:not(.p-element):not(.p-component),
+    button:not(.p-element):not(.p-component) {
+        &:not(.p-toast-message, .p-toast-message-content, .p-toast-message-text, .p-dialog-header, .p-dialog-content, .p-tooltip, .p-tooltip-arrow, .p-tooltip-text) {
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+
+html {
+    font-size: 16px;
+}
+
+body {
+    min-height: 100vh;
+    font-family: $font-primary;
+    font-optical-sizing: auto;
+}
+
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 15px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    html {
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 13px !important;
+    }
+}
+
+
+@media (max-width: 576px) {
+    html {
+        font-size: 12px !important;
+    }
+}

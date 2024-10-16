@@ -1,0 +1,34 @@
+<div class="success-container flex flex-column lg:flex-row">
+    <!-- Mobile branding -->
+    <div class="logo flex lg:hidden">
+        <img src="assets/images/logo.svg"
+             alt="">
+    </div>
+
+    <!-- Steps -->
+    <div class="col-4 p-0 hidden lg:flex">
+        <app-branding>
+        </app-branding>
+    </div>
+
+    <div class="inner col p-3">
+        <img src="assets/icons/check.svg"
+             alt="">
+
+        <span class="text-1">{{ "Thank you!" | translate }}</span>
+
+        <p class="text-2">{{ "Your information has been completed." | translate }}</p>
+
+        <p class="text-3"> {{ "You qualify as " | translate }} </p>
+
+        <h4 class="text-4">
+            {{classification}}
+        </h4>
+
+        <!-- <p class="text-5">You can invest up to $30,000</p> -->
+
+        <a [routerLink]="'/' + webRoutes.home + '/' + webRoutes.opportunities">
+            <button class="btn btn-primary">{{ "Browse opportunities" | translate }}</button>
+        </a>
+    </div>
+</div>

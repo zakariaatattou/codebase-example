@@ -1,0 +1,76 @@
+<a class="opportunity-card"
+   [routerLink]="'/opportunities/details'">
+    <!-- Image -->
+    <div class="img">
+        <div class="head">
+            <div class="badges">
+                <span class="badge"> Featured</span>
+                <span class="badge"> OM</span>
+            </div>
+            <button>
+                <i class="pi pi-bookmark"></i>
+            </button>
+
+        </div>
+        <div class="logo"
+             *ngIf="variation === 'variation-1'">
+            <img src="/assets/images/ginko.png"
+                 alt="">
+        </div>
+        <div class="progress"
+             *ngIf="variation === 'variation-2'">
+            <span class="title">Raised</span>
+            <p>75% - 19 days left</p>
+            <p-progressBar [showValue]="false"
+                           color="#F2A413"
+                           [value]="50" />
+            <ul>
+                <li>
+                    <span class="label">Traget</span>
+                    <span class="value">3,00,0000 M</span>
+                </li>
+                <li>
+                    <span class="label">Raised</span>
+                    <span class="value">2,00,0000 M</span>
+                </li>
+                <li>
+                    <span class="label">Investors</span>
+                    <span class="value">55</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Text -->
+    <div class="text">
+        <h2>
+            Ginkgo Mortgage Investment Corporation
+        </h2>
+
+        <ul>
+            <li>
+                <label for="">
+                    Real Estate
+                </label>
+                <div class="separator"></div>
+                <span>Fixed Income</span>
+            </li>
+            <li>
+                <label for="">
+                    Targeted Return
+                </label>
+                <span>8% - 10%, Annually</span>
+            </li>
+            <li>
+                <label for="">
+                    Distribution </label>
+                <span>N/A</span>
+            </li>
+            <li>
+                <label for="">
+                    Minimum Subscription
+                </label>
+                <span>Initial $10,000</span>
+            </li>
+        </ul>
+    </div>
+</a>

@@ -1,0 +1,19 @@
+:host ::ng-deep {
+    width: 100%;
+
+    p-autocomplete .p-autocomplete {
+        width: 100%;
+
+        input {
+            padding: 0.5rem 1rem inherit !important;
+        }
+    }
+
+    .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+        background-color: var(--color-primary);
+    }
+
+    form {
+        gap: 2rem;
+    }
+}

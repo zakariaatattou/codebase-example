@@ -1,0 +1,117 @@
+<form class="flex flex-column"
+      [formGroup]="x">
+    <!-- Is the entity a reporting issuer? -->
+    <div class="input-box">
+        <h3>{{ "Is the entity a reporting issuer?" | translate}}</h3>
+        <div class="flex gap-2 align-items-center">
+            <div class="custom-radio-input">
+                <input type="radio"
+                       formControlName="isEntityReport"
+                       [value]="true"
+                       [id]=" 'isEntityReport' + true">
+                <label [for]="'isEntityReport' + true">
+                    <div class="circle"></div>
+                    {{ "Yes" | translate }}
+                </label>
+            </div>
+            <div class="custom-radio-input">
+                <input type="radio"
+                       formControlName="isEntityReport"
+                       [value]="false"
+                       [id]=" 'isEntityReport' + false">
+                <label [for]="'isEntityReport' + false">
+                    <div class="circle"></div>
+                    {{ "No" | translate }}
+                </label>
+            </div>
+        </div>
+
+        <!-- Details -->
+        <ng-container *ngIf="x?.get('isEntityReport')?.value">
+            <div class="form-group col p-0">
+                <label for="">{{ "Where do the shares trade?" | translate }}</label>
+                <input formControlName="entityReportDetails"
+                       type="text">
+            </div>
+        </ng-container>
+    </div>
+    <!-- Purpose of the entity: -->
+    <div class="input-box">
+        <h3>{{ "Purpose of the entity:" | translate}}</h3>
+        <div class="flex gap-4 justify-content-between flex-column lg:flex-row">
+            <div class="custom-radio-input"
+                 *ngFor="let item of  $entityPurposesList; let i = index">
+                <input type="radio"
+                       [value]="item.id"
+                       formControlName="purposeEntity"
+                       [id]="'purposeEntity' + i">
+                <label [for]="'purposeEntity' + i">
+                    <div class="circle"></div>
+                    {{item.name}}
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- Is the charity registered under the Income Tax Act? -->
+    <div class="input-box"
+         *ngIf="x?.get('purposeEntity').value == 2">
+        <h3>{{ "Is the charity registered under the Income Tax Act?" | translate}}</h3>
+        <div class="flex gap-2 align-items-center">
+            <div class="custom-radio-input">
+                <input type="radio"
+                       formControlName="isIncomeTaxAct"
+                       [value]="true"
+                       [id]=" 'isIncomeTaxAct' + true">
+                <label [for]="'isIncomeTaxAct' + true">
+                    <div class="circle"></div>
+                    {{ "Yes" | translate }}
+                </label>
+            </div>
+            <div class="custom-radio-input">
+                <input type="radio"
+                       formControlName="isIncomeTaxAct"
+                       [value]="false"
+                       [id]=" 'isIncomeTaxAct' + false">
+                <label [for]="'isIncomeTaxAct' + false">
+                    <div class="circle"></div>
+                    {{ "No" | translate }}
+                </label>
+            </div>
+        </div>
+
+        <!-- Details -->
+        <ng-container *ngIf="x?.get('isIncomeTaxAct')?.value">
+            <div class="form-group col p-0">
+                <label for="">{{ "Where do the shares trade?" | translate }}</label>
+                <input formControlName="taxActRegistrationNo"
+                       type="text">
+            </div>
+        </ng-container>
+    </div>
+    <!-- Does the entity solicit charitable financial donations from the public? -->
+    <div class="input-box">
+        <h3>{{ "Does the entity solicit charitable financial donations from the public?" | translate}}</h3>
+        <div class="flex gap-2 align-items-center">
+            <div class="custom-radio-input">
+                <input type="radio"
+                       formControlName="doesSolicitCharitable"
+                       [value]="true"
+                       [id]=" 'doesSolicitCharitable' +  true">
+                <label [for]="'doesSolicitCharitable' +  true">
+                    <div class="circle"></div>
+                    {{ "Yes" | translate }}
+                </label>
+            </div>
+            <div class="custom-radio-input">
+                <input type="radio"
+                       formControlName="doesSolicitCharitable"
+                       [value]="false"
+                       [id]="'doesSolicitCharitable' +  false">
+                <label [for]="'doesSolicitCharitable' +  false">
+                    <div class="circle"></div>
+                    {{ "No" | translate }}
+                </label>
+            </div>
+        </div>
+    </div>
+</form>

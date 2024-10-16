@@ -1,0 +1,163 @@
+:host ::ng-deep .registration-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    h3 {
+        font-weight: 400;
+        font-size: 2rem;
+        line-height: 140%;
+        text-align: center;
+        color: var(--color-dark);
+        margin-bottom: 3.125rem;
+        font-family: var(--font-secondary);
+    }
+
+    .account-types ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        margin-bottom: 2rem;
+
+        li {
+            position: relative;
+
+            &.disabled {
+                opacity: .4;
+                user-select: none !important;
+                cursor: not-allowed !important;
+
+                &:hover {
+                    i {
+                        color: #828282 !important;
+                    }
+
+                    label {
+                        cursor: not-allowed !important;
+                        border-color: #D6D6D6 !important;
+                    }
+                }
+            }
+
+            label {
+                display: flex;
+                align-items: center;
+                padding: 1rem;
+                gap: 8px;
+                background: #FFFFFF;
+                border: 1px solid #D6D6D6;
+                border-radius: 12px;
+                cursor: pointer;
+                gap: 28px;
+                user-select: none !important;
+
+                i {
+                    font-size: 2.5rem;
+                    color: #828282;
+                }
+
+                .details {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    h4 {
+                        font-family: var(--font-secondary);
+                        font-weight: 400;
+                        font-size: 1.25rem;
+                        line-height: 140%;
+                        color: #333333;
+                    }
+
+                    p {
+                        font-weight: 400;
+                        font-size: 1rem;
+                        line-height: 140%;
+                        color: #A5A5A5;
+                    }
+                }
+
+                &:hover {
+                    border-color: #F2A413;
+
+
+                    h4 {
+                        color: var(--color-primary);
+                    }
+
+                    i {
+                        color: var(--color-primary);
+                    }
+                }
+            }
+
+            input {
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                width: 0;
+                height: 0;
+
+                &:checked+label {
+                    border: 1px solid var(--color-primary);
+
+                    h4 {
+                        color: var(--color-primary);
+                    }
+
+
+                    i {
+                        color: var(--color-primary);
+                    }
+                }
+            }
+        }
+    }
+
+    .forgot-password-link,
+    button {
+        text-align: right;
+        margin-bottom: 2.5rem;
+    }
+
+    .privacy-link {
+        margin-bottom: 2.5rem;
+        text-align: center;
+    }
+
+
+    .registration-link {
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 140%;
+        color: #A5A5A5;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 552px;
+
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .iti--allow-dropdown {
+        border-radius: 12px;
+        // overflow: hidden;
+    }
+
+
+    .iti--allow-dropdown {
+        width: 100% !important;
+    }
+
+}

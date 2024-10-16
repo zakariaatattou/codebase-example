@@ -1,0 +1,19 @@
+<div class="about-container">
+    <div class="text">
+        <div class="text-inner">
+            <h3>{{ content?.Insights?.InsightsFirstTitle }} <span>{{ content?.Insights?.InsightsOrangeTitle }}  </span>
+            </h3>
+            <p>
+              {{ content?.Insights?.description }}
+            </p>
+            <a href="">
+              {{ content?.Insights?.learnMoreLinkTitle }}
+                <i class="pi pi-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+    <div class="img">
+        <img [src]="environment.cmsUrl+ content?.Insights?.photo?.url "
+             alt="">
+    </div>
+</div>

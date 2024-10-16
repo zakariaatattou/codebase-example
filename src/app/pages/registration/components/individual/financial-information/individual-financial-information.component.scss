@@ -1,0 +1,37 @@
+:host {
+    width: 100%;
+
+    form {
+        gap: 2rem;
+
+
+        .input-box {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 22px 1rem;
+            background: #FFFFFF;
+            border-radius: 8px;
+
+            h3 {
+                font-family: var(--font-secondary);
+                font-style: normal;
+                font-weight: 400;
+                font-size: 1.25rem;
+                line-height: 140%;
+                color: #1A1A1A;
+            }
+
+            .form-group-percentage {
+                max-width: 497px;
+
+                div {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    gap: 1.75rem;
+                }
+            }
+        }
+    }
+}

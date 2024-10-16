@@ -1,0 +1,85 @@
+.reads-container {
+
+    padding: 3.875rem 1rem;
+
+    .inner {
+        max-width: 1022px;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        margin: 0 auto;
+
+        .title {
+            display: flex;
+            flex-direction: column;
+            gap: .8rem;
+
+            h2 {
+                font-weight: 400;
+                font-size: 3rem;
+                line-height: 140%;
+                color: #1B1B1B;
+                font-family: var(--font-secondary);
+            }
+
+            p {
+                font-weight: 500;
+                font-size: 1.25rem;
+                line-height: 160%;
+                color: #1B1B1B;
+            }
+        }
+
+        .reads-cards {
+            display: flex;
+            gap: .5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .read-card {
+                max-width: 334px;
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+                width: 100%;
+
+                h2 {
+                    font-weight: 400;
+                    font-size: 1rem;
+                    line-height: 140%;
+                    color: #1D1F1F;
+                    font-family: var(--font-secondary);
+                }
+
+                p {
+                    font-weight: 500;
+                    font-size: .75rem;
+                    line-height: 140%;
+                    color: #1B1B1B;
+                }
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    gap: .5rem;
+                    font-weight: 500;
+                    font-size: .75rem;
+                    line-height: 140%;
+                    color: var(--color-primary);
+
+                    i {
+                        font-size: .75rem;
+                    }
+
+                    &:hover {
+                        opacity: .8;
+                    }
+                }
+            }
+        }
+
+        .cta {
+            margin: 0 auto;
+        }
+    }
+}

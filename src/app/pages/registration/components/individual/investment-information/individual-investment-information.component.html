@@ -1,0 +1,93 @@
+<form [formGroup]="x"
+      class="flex flex-column">
+    <!-- What is your risk tolerance and ability to absorb risk for your total investment portfolio? -->
+    <div class="input-box">
+        <h3>{{ "investmentInformation.riskTolerance" | translate}}</h3>
+        <div class="flex gap-2 justify-content-between flex-column lg:flex-row">
+            <div class="custom-radio-input"
+                 *ngFor="let item of lookupService.getRiskList(); let i = index">
+                <input type="radio"
+                       [value]="item.id"
+                       formControlName="riskLevel"
+                       [id]="'riskLevel' + i">
+                <label [for]="'riskLevel' + i">
+                    <div class="circle"></div>
+                    {{item.name}}
+                    <i class="pi pi-info-circle"
+                       pTooltip="Option description goes here"
+                       tooltipPosition="top"></i>
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- What is the time horizon of your investment objective? -->
+    <div class="input-box">
+        <h3>{{ "investmentInformation.investmentObjective" | translate}}</h3>
+        <div class="flex gap-2 justify-content-between flex-column lg:flex-row">
+            <div class="custom-radio-input"
+                 *ngFor="let item of lookupService.getInvestmentObjectiveTimeList(); let i = index">
+                <input type="radio"
+                       [value]="item.id"
+                       formControlName="timeInvestment"
+                       [id]="'timeInvestment' + i">
+                <label [for]="'timeInvestment' + i">
+                    <div class="circle"></div>
+                    {{item.name}}
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- What is your overall investment objective? -->
+    <div class="input-box">
+        <h3>{{ "investmentInformation.overallInvestmentObjective" | translate}}</h3>
+        <div class="flex gap-2 justify-content-between flex-column lg:flex-row">
+            <div class="custom-radio-input"
+                 *ngFor="let item of lookupService.getInvestmentObjectiveList(); let i = index">
+                <input type="radio"
+                       [value]="item.id"
+                       formControlName="overallInvestment"
+                       [id]="'overallInvestment' + i">
+                <label [for]="'overallInvestment' + i">
+                    <div class="circle"></div>
+                    {{item.name}}
+                    <i class="pi pi-info-circle"
+                       pTooltip="Option description goes here"
+                       tooltipPosition="top"></i>
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- How do you evaluate your investment knowledge? -->
+    <div class="input-box">
+        <h3>{{ "investmentInformation.investmentKnowledge" | translate}}</h3>
+        <div class="flex gap-2 justify-content-between flex-column lg:flex-row">
+            <div class="custom-radio-input"
+                 *ngFor="let item of lookupService.getInvestmentKnowleadgeList(); let i = index">
+                <input type="radio"
+                       [value]="item.id"
+                       formControlName="investmentKnowledge"
+                       [id]="'investmentKnowledge' + i">
+                <label [for]="'investmentKnowledge' + i">
+                    <div class="circle"></div>
+                    {{item.name}}
+                    <i class="pi pi-info-circle"
+                       pTooltip="Option description goes here"
+                       tooltipPosition="top"></i>
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- Check all the types of investments with which you have experience: -->
+    <div class="input-box">
+        <h3>{{ "investmentInformation.typesOfInvestments" | translate}}</h3>
+        <div class="flex flex-column gap-2">
+            <div class="custom-checkbox-input"
+                 *ngFor="let item of $getInvestmentTypesList; let i = index">
+                <p-checkbox [formControl]="x.get('investmentTypeExperiences')"
+                            [inputId]="'investmentTypeExperiences' + i"
+                            [value]="item.id" />
+                <label [for]="'investmentTypeExperiences' + i">{{ item.name | translate}}</label>
+            </div>
+        </div>
+    </div>
+</form>

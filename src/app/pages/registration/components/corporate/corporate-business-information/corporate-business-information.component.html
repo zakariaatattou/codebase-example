@@ -1,0 +1,128 @@
+<form [formGroup]="x"
+      class="flex flex-column">
+    <!-- Business Name -->
+    <div class="form-group col p-0">
+        <label for="">{{ "Business Name" | translate }}</label>
+        <input formControlName="businessName"
+               type="text">
+        <div class="error"
+             *ngIf="x.get('businessName').hasError('required') && x.get('businessName').touched">
+            <i class="pi pi-info-circle"></i>
+            <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+        </div>
+    </div>
+
+    <!-- Business Address -->
+    <div class="form-group col p-0">
+        <label for="">{{ "Business Address" | translate }}</label>
+        <input type="text"
+               formControlName="businessAddress">
+        <div class="error"
+             *ngIf="x.get('businessAddress').hasError('required') && x.get('businessAddress').touched">
+            <i class="pi pi-info-circle"></i>
+            <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+        </div>
+    </div>
+
+
+    <div class="flex gap-4 justify-content-between flex-column lg:flex-row">
+        <!-- Business Sector -->
+        <div class="form-group col p-0">
+            <label for="">{{ "Business Sector" | translate }}</label>
+            <p-dropdown [options]=" $sectorsList"
+                        optionLabel="name"
+                        optionValue="id"
+                        [filter]="true"
+                        formControlName="businessSector" />
+            <div class="error"
+                 *ngIf="x.get('businessSector').hasError('required') && x.get('businessSector').touched">
+                <i class="pi pi-info-circle"></i>
+                <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+            </div>
+        </div>
+        <!-- Type of Entity -->
+        <div class="form-group col p-0">
+            <label for="">{{ "Type of Entity" | translate }}</label>
+            <p-dropdown [options]="$entityTypesList"
+                        optionLabel="name"
+                        optionValue="id"
+                        [filter]="true"
+                        formControlName="typeEntity" />
+            <div class="error"
+                 *ngIf="x.get('typeEntity').hasError('required') && x.get('typeEntity').touched">
+                <i class="pi pi-info-circle"></i>
+                <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jurisdiction of incorporation -->
+    <div class="form-group col p-0">
+        <label for="">{{ "Jurisdiction of incorporation" | translate }}</label>
+        <input type="text"
+               formControlName="jurisdictionIncorporation">
+        <div class="error"
+             *ngIf="x.get('jurisdictionIncorporation').hasError('required') && x.get('jurisdictionIncorporation').touched">
+            <i class="pi pi-info-circle"></i>
+            <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+        </div>
+    </div>
+
+    <!-- Date of incorporation -->
+    <div class="form-group col p-0">
+        <label for="">{{ "Date of incorporation" | translate }}</label>
+        <p-calendar [iconDisplay]="'input'"
+                    [showIcon]="true"
+                    formControlName="dateIncorporation"
+                    inputId="icondisplay" />
+        <div class="error"
+             *ngIf="x.get('dateIncorporation').hasError('required') && x.get('dateIncorporation').touched">
+            <i class="pi pi-info-circle"></i>
+            <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+        </div>
+    </div>
+
+
+    <!-- Canada Revenue Agency business number -->
+    <div class="form-group col p-0">
+        <label for="">{{ "Canada Revenue Agency business number" | translate }}</label>
+        <p-inputMask mask="99999-9999"
+                     formControlName="crabn"
+                     placeholder="99999-9999" />
+        <div class="error"
+             *ngIf="x.get('crabn').hasError('required') && x.get('crabn').touched">
+            <i class="pi pi-info-circle"></i>
+            <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+        </div>
+        <div class="error"
+             *ngIf="x.get('crabn').hasError('pattern')">
+            <i class="pi pi-info-circle"></i>
+            <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+        </div>
+    </div>
+
+    <!-- Phone Number -->
+    <div class="form-group">
+        <label for="">{{ "Phone Number" | translate }}</label>
+        <app-phone-input formControlName="telephoneNo"></app-phone-input>
+        <div class="error"
+             *ngIf="x.get('telephoneNo').hasError('required') && x.get('telephoneNo').touched">
+            <i class="pi pi-info-circle"></i>
+            <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+        </div>
+    </div>
+
+    <!-- Website -->
+    <div class="form-group col p-0">
+        <label for="">{{ "Website" | translate }}</label>
+        <input type="text"
+               formControlName="website">
+        <div class="error"
+             *ngIf="x.get('website').hasError('required') && x.get('website').touched">
+            <i class="pi pi-info-circle"></i>
+            <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+        </div>
+    </div>
+
+
+</form>

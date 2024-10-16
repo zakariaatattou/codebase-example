@@ -1,0 +1,76 @@
+:host ::ng-deep .information-container {
+    padding: 1.5rem;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(242, 164, 19, 0.12);
+    border-radius: 24px;
+    min-height: 418px;
+
+    .p-tabview-panel {
+        margin-top: 1.5rem;
+
+
+        .title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+
+            h3 {
+                font-weight: 400;
+                font-size: 1.25rem;
+                line-height: 140%;
+                color: #1D1F1F;
+                font-family: var(--font-secondary);
+            }
+        }
+
+        .information {
+            .info-col {
+                display: flex;
+                flex-direction: column;
+                gap: .2rem;
+
+                .label {
+                    font-weight: 400;
+                    font-size: .75rem;
+                    line-height: 140%;
+                    color: #666666;
+                }
+
+                .value {
+                    font-weight: 500;
+                    font-size: 1rem;
+                    line-height: 140%;
+                    color: #333333;
+
+                }
+            }
+        }
+    }
+
+    .p-tabview-nav {
+        .p-tabview-nav-link {
+            padding: 1rem;
+        }
+
+        .p-tabview-title {
+            color: #666666;
+            font-family: var(--font-secondary);
+            font-weight: 400;
+            font-size: .875rem;
+            line-height: 140%;
+        }
+
+        .p-highlight {
+            .p-tabview-nav-link {
+                border-color: var(--color-primary);
+            }
+
+            .p-tabview-title {
+                color: var(--color-primary);
+            }
+        }
+    }
+
+
+}

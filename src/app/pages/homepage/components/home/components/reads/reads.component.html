@@ -1,0 +1,37 @@
+<div class="reads-container">
+    <div class="inner">
+        <!-- Title -->
+        <div class="title">
+            <h2>
+               {{content?.blogs?.title}}
+            </h2>
+            <p>
+              {{content?.blogs?.description}}
+            </p>
+        </div>
+
+        <!-- Cards -->
+
+        <div class="reads-cards">
+            <div class="read-card" *ngFor="let blog of content?.blogs?.blogs">
+                <img [src]="environment.cmsUrl+blog.thumbnail?.url"
+                     alt="">
+                <h2>{{blog.title}}</h2>
+                <p>
+                  {{blog.shortDescription}}
+                </p>
+                <a href="">
+                    Read more <i class="pi pi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <a href=""
+           class="cta">
+            <button class="btn btn-primary-outline">
+              {{content?.blogs?.buttonTitle}}
+            </button>
+        </a>
+    </div>
+</div>

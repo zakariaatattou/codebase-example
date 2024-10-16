@@ -1,0 +1,42 @@
+:host ::ng-deep {
+    input {
+        width: 100%;
+
+        &::placeholder {
+            font-weight: 400 !important;
+            font-size: 1rem !important;
+            line-height: 140% !important;
+            color: #666666 !important;
+            font-family: var(--font-primary);
+        }
+    }
+
+    .iti--allow-dropdown {
+        position: relative;
+        width: 100%;
+
+
+        .iti__selected-flag {
+            border-radius: 12px;
+            background: transparent;
+            padding: 0 1rem;
+
+            &:hover {
+                border-radius: 12px;
+                background: transparent;
+            }
+
+            &::after {
+                height: 34px;
+                content: "";
+                border-right: 1px solid #EEEEEE;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0;
+            }
+
+        }
+    }
+
+}

@@ -1,0 +1,21 @@
+<div class="faq-container">
+    <div class="inner">
+        <!-- Title -->
+        <div class="title">
+            <h2>
+                {{content?.faqs?.title}}
+            </h2>
+            <p>
+              {{content?.faqs?.description}}
+            </p>
+        </div>
+        <!-- FAQs -->
+        <p-accordion>
+            <p-accordionTab   *ngFor="let item of content?.faqs?.faqs" header="{{item.question}}">
+                <p>
+                  {{item.answer}}
+                </p>
+            </p-accordionTab>
+        </p-accordion>
+    </div>
+</div>

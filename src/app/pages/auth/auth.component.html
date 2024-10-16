@@ -1,0 +1,16 @@
+<div class="auth-container  flex flex-column lg:flex-row">
+    <!-- Mobile branding -->
+    <div class="logo flex lg:hidden">
+        <img src="assets/images/logo.svg"
+             alt="">
+    </div>
+
+    <!-- Branding -->
+    <div class="col-4 p-0 hidden lg:flex">
+        <app-branding></app-branding>
+    </div>
+    <!-- Content -->
+    <div class="col p-3">
+        <router-outlet></router-outlet>
+    </div>
+</div>

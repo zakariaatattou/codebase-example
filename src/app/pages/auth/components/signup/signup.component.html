@@ -1,0 +1,194 @@
+<div class="registration-container">
+    <h3>Create account</h3>
+
+
+    <ng-container *ngIf="mode === 'type'">
+        <div class="account-types">
+            <ul>
+                <li>
+                    <input type="radio"
+                           name="type"
+                           value="Investor"
+                           [formControl]="accountType"
+                           id="Investor">
+                    <label for="Investor">
+                        <i class="pi pi-user"></i>
+                        <div class="details">
+                            <h4>{{"Investor" | translate}}</h4>
+                            <p>Manage your own money, choose your goals, build wealth for Manage your own money, </p>
+                        </div>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio"
+                           name="type"
+                           value="Entrepreneur"
+                           [formControl]="accountType"
+                           id="Entrepreneur">
+                    <label for="Entrepreneur">
+                        <i class="pi pi-building"></i>
+                        <div class="details">
+                            <h4>{{"Issuer" | translate}}</h4>
+                            <p>High-growth potential ventures seeking strategic partnership and capital for market
+                                expansion.
+                            </p>
+                        </div>
+                    </label>
+                </li>
+            </ul>
+            <button type="button"
+                    [disabled]="accountType.invalid"
+                    (click)="onContinue()"
+                    class="btn btn-primary w-full">{{"Continue" | translate}}</button>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="mode === 'form'">
+        <form [formGroup]="investorForm">
+            <div class="flex gap-2  justify-content-between">
+                <!-- First name -->
+                <div class="form-group">
+                    <p-floatLabel>
+                        <input pInputText
+                               formControlName="firstName"
+                               id="username" />
+                        <label for="username">{{"account.firstName" | translate}}</label>
+
+                    </p-floatLabel>
+                    <div class="error"
+                         *ngIf="investorForm.get('firstName')?.hasError('required') && investorForm.get('firstName')?.touched">
+                        <i class="pi pi-info-circle"></i>
+                        <span>This field is mandatory</span>
+                    </div>
+                    <div class="error"
+                         *ngIf="investorForm.get('firstName')?.hasError('maxlength')">
+                        <i class="pi pi-info-circle"></i>
+                        <span>Invalid value</span>
+                    </div>
+                </div>
+                <!-- Last Name -->
+                <div class="form-group">
+                    <p-floatLabel>
+                        <input pInputText
+                               formControlName="lastName"
+                               id="username" />
+                        <label for="username">{{"account.lastName" | translate}}</label>
+
+                    </p-floatLabel>
+                    <div class="error"
+                         *ngIf="investorForm.get('lastName')?.hasError('required') && investorForm.get('lastName')?.touched">
+                        <i class="pi pi-info-circle"></i>
+                        <span>This field is mandatory</span>
+                    </div>
+                    <div class="error"
+                         *ngIf="investorForm.get('lastName')?.hasError('maxlength')">
+                        <i class="pi pi-info-circle"></i>
+                        <span>Invalid value</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Email -->
+            <div class="form-group">
+                <p-floatLabel>
+                    <input pInputText
+                           type="email"
+                           formControlName="email"
+                           id="username" />
+                    <label for="username">{{"account.email" | translate}}</label>
+
+                </p-floatLabel>
+                <div class="error"
+                     *ngIf="investorForm.get('email')?.hasError('maxlength')">
+                    <i class="pi pi-info-circle"></i>
+                    <span>Invalid email address</span>
+                </div>
+                <div class="error"
+                     *ngIf="investorForm.get('email')?.hasError('required') && investorForm.get('email')?.touched">
+                    <i class="pi pi-info-circle"></i>
+                    <span>This field is mandatory</span>
+                </div>
+                <div class="error"
+                     *ngIf="investorForm.get('email')?.hasError('email')">
+                    <i class="pi pi-info-circle"></i>
+                    <span>Invalid email address</span>
+                </div>
+            </div>
+            <!-- Password -->
+            <div class="form-group">
+                <p-floatLabel>
+                    <p-password [feedback]="false"
+                                formControlName="password"
+                                [toggleMask]="true" />
+                    <label for="password">{{"account.password" | translate}}</label>
+                </p-floatLabel>
+                <div class="error"
+                     *ngIf="investorForm.get('password')?.hasError('required') && investorForm.get('password')?.touched">
+                    <i class="pi pi-info-circle"></i>
+                    <span>This field is mandatory</span>
+                </div>
+                <div class="error"
+                     *ngIf="investorForm.get('password')?.hasError('pattern')">
+                    <i class="pi pi-info-circle"></i>
+                    <span>Please enter a strong password</span>
+                </div>
+                <div class="error"
+                     *ngIf="investorForm.get('password')?.hasError('maxlength')">
+                    <i class="pi pi-info-circle"></i>
+                    <span>Invalid value</span>
+                </div>
+            </div>
+            <!-- Password Confirmation -->
+            <div class="form-group">
+                <p-floatLabel>
+                    <p-password [feedback]="false"
+                                formControlName="passwordConfirmation"
+                                [toggleMask]="true" />
+                    <label for="password">{{"account.confirmPassword" | translate}}</label>
+                </p-floatLabel>
+                <div class="error"
+                     *ngIf="investorForm.get('passwordConfirmation')?.hasError('required') && investorForm.get('passwordConfirmation')?.touched">
+                    <i class="pi pi-info-circle"></i>
+                    <span>This field is mandatory</span>
+                </div>
+                <div class="error"
+                     *ngIf="investorForm.get('passwordConfirmation')?.hasError('pattern')">
+                    <i class="pi pi-info-circle"></i>
+                    <span>Please enter a strong password</span>
+                </div>
+                <div class="error"
+                     *ngIf="investorForm.get('passwordConfirmation')?.hasError('maxlength')">
+                    <i class="pi pi-info-circle"></i>
+                    <span>Invalid value</span>
+                </div>
+            </div>
+            <!-- Cell phone -->
+            <div class="form-group">
+                <app-phone-input formControlName="phoneNumber"></app-phone-input>
+                <div class="error"
+                     *ngIf="investorForm.get('phoneNumber')?.hasError('required') && investorForm.get('phoneNumber')?.touched">
+                    <i class="pi pi-info-circle"></i>
+                    <span>This field is mandatory</span>
+                </div>
+            </div>
+            <!-- Registeration button -->
+            <button type="button"
+                    [disabled]="investorForm.invalid"
+                    class="btn btn-primary"
+                    (click)="onValidateEmail()">{{"account.signUp" | translate}}</button>
+        </form>
+    </ng-container>
+
+    <!-- Privacy policy -->
+    <div class="privacy-link">By signing up, you're agreeing to GrowWise's <a href=""
+           class="btn-link btn-link-primary">Terms and
+            Conditions</a> and <a href=""
+           class="btn-link btn-link-primary">Privacy
+            Policy</a>.</div>
+
+    <!-- Login link -->
+    <div class="registration-link flex gap-2 justify-content-center align-items-center">
+        Already have an account? <a [routerLink]="'/' +  routes.auth + '/' + routes.login"
+           class="btn-link btn-link-primary"> Sign in</a>
+    </div>
+
+</div>

@@ -1,0 +1,199 @@
+<form class="flex flex-column"
+      [formGroup]="x">
+    <!-- Does the entity, the authorized representative, any beneficial owner, or their spouses, own or control, directly or indirectly, 10% or more of the voting rights of any publicly traded company? -->
+    <div class="input-box">
+        <h3>{{ "Does the entity, the authorized representative, any beneficial owner, or their spouses, own or control,
+            directly or indirectly, 10% or more of the voting rights of any publicly traded company?" | translate}}</h3>
+        <div class="flex gap-2 align-items-center">
+            <div class="custom-radio-input">
+                <input type="radio"
+                       name="employment-status"
+                       id="employee">
+                <label for="employee">
+                    <div class="circle"></div>
+                    {{ "disclosure.yes" | translate}}
+                </label>
+            </div>
+            <div class="custom-radio-input">
+                <input type="radio"
+                       name="employment-status"
+                       id="self-employment">
+                <label for="self-employment">
+                    <div class="circle"></div>
+                    {{ "disclosure.no" | translate}}
+                </label>
+            </div>
+        </div>
+        <!-- Details -->
+        <div class="form-group col p-0">
+            <label for="">{{ "Details" | translate }}</label>
+            <input type="text">
+        </div>
+    </div>
+    <!-- Is the entity, the authorized representative, any beneficial owner, or their spouses, an insider, a director or officer of a publicly-traded company or an affiliate of publicly traded company? -->
+    <div class="input-box">
+        <h3>{{ "Is the entity, the authorized representative, any beneficial owner, or their spouses, an insider, a
+            director or officer of a publicly-traded company or an affiliate of publicly traded company?" | translate}}?
+        </h3>
+        <div class="flex gap-2 align-items-center">
+            <div class="custom-radio-input">
+                <input type="radio"
+                       name="employment-status"
+                       id="employee">
+                <label for="employee">
+                    <div class="circle"></div>
+                    {{ "disclosure.yes" | translate}}
+                </label>
+            </div>
+            <div class="custom-radio-input">
+                <input type="radio"
+                       name="employment-status"
+                       id="self-employment">
+                <label for="self-employment">
+                    <div class="circle"></div>
+                    {{ "disclosure.no" | translate}}
+                </label>
+            </div>
+        </div>
+        <!-- Details -->
+        <div class="form-group col p-0">
+            <label for="">{{ "Details" | translate }}</label>
+            <input type="text">
+        </div>
+    </div>
+    <!-- Are any authorized representatives, shareholders (25% or more), or directors a Politically Exposed Person (PEP) -->
+    <div class="input-box">
+        <h3>{{ "Are any authorized representatives, shareholders (25% or more), or directors a Politically Exposed
+            Person (PEP)" | translate}}</h3>
+        <div class="flex gap-2 align-items-center">
+            <div class="custom-radio-input">
+                <input type="radio"
+                       name="employment-status"
+                       id="employee">
+                <label for="employee">
+                    <div class="circle"></div>
+                    {{ "disclosure.yes" | translate}}
+                </label>
+            </div>
+            <div class="custom-radio-input">
+                <input type="radio"
+                       name="employment-status"
+                       id="self-employment">
+                <label for="self-employment">
+                    <div class="circle"></div>
+                    {{ "disclosure.no" | translate}}
+                </label>
+            </div>
+        </div>
+        <div class="flex flex-column gap-2">
+            <div class="custom-checkbox-input">
+                <p-checkbox [binary]="true"
+                            inputId="binary" />
+                <label for="employee">{{ "Head of state or head of government, governor general or lieutenant governor"
+                    | translate}}</label>
+            </div>
+            <div class="custom-checkbox-input">
+                <p-checkbox [binary]="true"
+                            inputId="binary" />
+                <label for="self-employment">{{ "President of a crown corporation, state-owned company or a state-owned
+                    bank" | translate}}</label>
+            </div>
+            <div class="custom-checkbox-input">
+                <p-checkbox [binary]="true"
+                            inputId="binary" />
+                <label for="retired">{{ "Judge of a supreme court, provincial appellate court, Federal Court of Appeal,
+                    Supreme Court of Canada or other court of last resort" | translate}}</label>
+            </div>
+            <div class="custom-checkbox-input">
+                <p-checkbox [binary]="true"
+                            inputId="binary" />
+                <label for="retired">{{ "Member of the executive council of government or legislature; member of a
+                    legislature, House of Commons or Senate" | translate}}
+                </label>
+            </div>
+            <div class="custom-checkbox-input">
+                <p-checkbox [binary]="true"
+                            inputId="binary" />
+                <label for="retired">{{ "Leader or president of a political party represented in a  officer with a rank
+                    of general or above" | translate}}
+                </label>
+            </div>
+            <div class="custom-checkbox-input">
+                <p-checkbox [binary]="true"
+                            inputId="binary" />
+                <label for="retired">{{ "Holder of any prescribed office or position or mayor" | translate}}
+                </label>
+            </div>
+            <div class="custom-checkbox-input">
+                <p-checkbox [binary]="true"
+                            inputId="binary" />
+                <label for="retired">{{ "Ambassador or attaché or counsellor of an ambassador" | translate}}
+                </label>
+            </div>
+            <div class="custom-checkbox-input">
+                <p-checkbox [binary]="true"
+                            inputId="binary" />
+                <label for="retired">{{ "Head of a government agency" | translate}}
+                </label>
+            </div>
+            <div class="custom-checkbox-input">
+                <p-checkbox [binary]="true"
+                            inputId="binary" />
+                <label for="retired">{{ "Deputy minister or equivalent rank" | translate}}
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- Are any authorized representatives, shareholders (25% or more), or directors the head of an international organization (HIO)?-->
+    <div class="input-box">
+        <h3>{{ "Are any authorized representatives, shareholders (25% or more), or directors the head of an
+            international organization (HIO)?" | translate}}</h3>
+        <div class="flex gap-2 align-items-center">
+            <div class="custom-radio-input">
+                <input type="radio"
+                       name="employment-status"
+                       id="employee">
+                <label for="employee">
+                    <div class="circle"></div>
+                    {{ "disclosure.yes" | translate}}
+                </label>
+            </div>
+            <div class="custom-radio-input">
+                <input type="radio"
+                       name="employment-status"
+                       id="self-employment">
+                <label for="self-employment">
+                    <div class="circle"></div>
+                    {{ "disclosure.no" | translate}}
+                </label>
+            </div>
+        </div>
+    </div>
+    <!--Are any authorized representatives, shareholders (25% or more), or directors the following??-->
+    <div class="input-box">
+        <h3> {{ "Are any authorized representatives, shareholders (25% or more), or directors the following?" |
+            translate}}</h3>
+        <div class="flex flex-column gap-2">
+            <div class="custom-radio-input">
+                <input type="radio"
+                       name="employment-status"
+                       id="employee">
+                <label for="employee">
+                    <div class="circle"></div>
+                    {{ "a spouse, common-law partner, child, mother, father, brother,
+                    sister (including half-brother/sister), or mother or father of a
+                    spouse or common-law partner of a PEP or HIO" | translate}}
+                </label>
+            </div>
+            <div class="custom-radio-input">
+                <input type="radio"
+                       name="employment-status"
+                       id="retired">
+                <label for="retired">
+                    <div class="circle"></div>
+                    {{ "A close associate of a PEP or HIO." | translate}}
+                </label>
+            </div>
+        </div>
+    </div>
+</form>

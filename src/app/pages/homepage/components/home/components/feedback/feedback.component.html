@@ -1,0 +1,40 @@
+<div class="feedback-container">
+    <div class="inner">
+        <!-- Title -->
+        <div class="title">
+            <h2>
+                {{content?.customerFeedback?.title}}
+
+            </h2>
+            <p>
+                {{content?.customerFeedback?.description}}
+            </p>
+        </div>
+
+        <div class="swipper-container">
+            <swiper-container class="mySwiper"
+                              speed="500"
+                              loop="true"
+                              autoplay-delay="2500"
+                              autoplay-disable-on-interaction="false"
+                              [initialSlide]="3"
+                              [breakpoints]="breakpoints"
+                              space-between="24"
+                              centered-slides="true">
+                <swiper-slide *ngFor="let item of content?.customerFeedback?.customer_feed_backs">
+                    <img src="/assets/icons/quote.svg"
+                         alt="">
+                    <p>
+                        {{item?.feedback}}
+                    </p>
+                    <div class="profile">
+                        <h4> {{item?.reviewerName}}</h4>
+                        <span>{{ item?.position }}</span>
+                    </div>
+                </swiper-slide>
+            </swiper-container>
+
+        </div>
+
+    </div>
+</div>

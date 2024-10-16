@@ -1,0 +1,191 @@
+:host ::ng-deep .stepper-container {
+    min-height: 100vh;
+    height: 100%;
+    background-color: #fafafa;
+
+    .logo {
+        width: 100%;
+        background-color: #EDEFDC;
+        display: flex;
+        align-items: center;
+        padding: 1.25rem 1rem;
+    }
+
+
+    .steps-list {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        gap: 2.5rem;
+        position: sticky;
+        top: 3rem;
+
+        .step {
+            opacity: 0.5;
+
+            &.active {
+                opacity: initial;
+
+                button {
+                    .step-badge {
+                        color: #F2A413;
+                        background: #54592A;
+
+
+                        &::after {
+                            border-color: #54592A !important;
+                        }
+                    }
+
+                    .step-title {
+                        font-weight: 500;
+                        font-size: 1.25rem;
+                        line-height: 160%;
+                        white-space: nowrap;
+                        color: #1D1F1F;
+                    }
+                }
+
+            }
+
+            button {
+                background-color: transparent;
+                border: none;
+                display: flex;
+                align-items: center;
+                gap: .875rem;
+                cursor: pointer;
+
+                .step-badge {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50px;
+                    z-index: 3;
+                    position: relative;
+
+                    .badge-text {
+                        position: relative;
+                        height: 100%;
+                        width: 100%;
+                        background: #54592A;
+                        font-weight: 500;
+                        font-size: 1.25rem;
+                        line-height: 160%;
+                        color: #F2A413;
+                        border-radius: 50px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+                        z-index: 3;
+                    }
+                }
+
+                .step-title {
+                    font-weight: 500;
+                    font-size: 1.25rem;
+                    line-height: 160%;
+                    color: #1D1F1F;
+                    text-align: initial;
+
+                }
+            }
+
+            &:not(:last-child) {
+                button .step-badge {
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: -40px;
+                        height: 100%;
+                        border: 1px solid #FFFFFF;
+                        z-index: -1;
+                    }
+                }
+            }
+        }
+    }
+
+    .p-stepper-nav {
+        display: none;
+    }
+
+    .p-stepper {
+        width: 100%;
+    }
+
+    .p-stepper-panels {
+        background-color: #fafafa;
+
+    }
+
+    .stepper {
+        background-color: #fafafa;
+        display: flex;
+        justify-content: center;
+
+        .step-content {
+            display: flex;
+            flex-direction: column;
+            padding: 52px 20px;
+            width: 100%;
+            background-color: #fafafa;
+            max-width: 900px;
+
+            .step-total {
+                margin-bottom: 1.5rem;
+                font-weight: 500;
+                font-size: 1.25rem;
+                line-height: 160%;
+                color: #000000;
+            }
+
+
+            .separator {
+                border: 1px solid #D6D6D6;
+                margin-bottom: 1.5rem;
+            }
+
+
+            .step-title {
+                font-family: var(--font-secondary);
+                font-weight: 400;
+                font-size: 2rem;
+                line-height: 140%;
+                color: #1D1F1F;
+                margin-bottom: 1rem;
+            }
+
+            .step-desc {
+                font-weight: 500;
+                font-size: 1rem;
+                line-height: 140%;
+                color: #666666;
+                margin-bottom: .875rem;
+            }
+
+            .step-form {
+                width: 100%;
+            }
+
+
+        }
+
+        .step-actions {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            background-color: transparent;
+            gap: 1rem;
+        }
+    }
+
+
+
+}
+
+
+.form-val {
+    position: sticky;
+    top: 1rem;
+}

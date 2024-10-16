@@ -1,0 +1,168 @@
+<form class="flex flex-column"
+      [formGroup]="x">
+    <!-- Do you or your spouse/partner own or control, directly or indirectly,
+        10% or more of the voting rights of any publicly traded company? -->
+    <div class="input-box">
+        <h3>{{ "disclosure.yourSpousePartnerOwnOrControl" | translate}}</h3>
+        <div class="flex gap-2 align-items-center">
+            <div class="custom-radio-input">
+                <input type="radio"
+                       formControlName="haveVoteTradeCompany"
+                       (change)="onHaveVoteTradeCompanyChange()"
+                       [value]="true"
+                       id="haveVoteTradeCompany-true">
+                <label for="haveVoteTradeCompany-true">
+                    <div class="circle"></div>
+                    {{ "disclosure.yes" | translate}}
+                </label>
+            </div>
+            <div class="custom-radio-input">
+                <input type="radio"
+                       formControlName="haveVoteTradeCompany"
+                       (change)="onHaveVoteTradeCompanyChange()"
+                       [value]="false"
+                       id="haveVoteTradeCompany-false">
+                <label for="haveVoteTradeCompany-false">
+                    <div class="circle"></div>
+                    {{ "disclosure.no" | translate}}
+                </label>
+            </div>
+        </div>
+        <!-- Details -->
+        <ng-container *ngIf="x?.get('haveVoteTradeCompany')?.value">
+            <div class="form-group col p-0">
+                <label for="">{{ "Details" | translate }}</label>
+                <input formControlName="voteTradeCompanyDetails"
+                       type="text">
+            </div>
+        </ng-container>
+
+    </div>
+    <!-- Are you or your spouse/partner an insider, a director or officer of a
+    publicly traded company or of an affiliate of publicly traded
+    company? -->
+    <div class="input-box">
+        <h3>{{ "disclosure.yourSpousePartnerOwnOrControl" | translate}}?</h3>
+        <div class="flex gap-2 align-items-center">
+            <div class="custom-radio-input">
+                <input type="radio"
+                       formControlName="isDirectorTradeCompany"
+                       (change)="onIsDirectorTradeCompanyChange()"
+                       [value]="true"
+                       id="isDirectorTradeCompany-true">
+                <label for="isDirectorTradeCompany-true">
+                    <div class="circle"></div>
+                    {{ "disclosure.yes" | translate}}
+                </label>
+            </div>
+            <div class="custom-radio-input">
+                <input type="radio"
+                       formControlName="isDirectorTradeCompany"
+                       (change)="onIsDirectorTradeCompanyChange()"
+                       [value]="false"
+                       id="false">
+                <label for="false">
+                    <div class="circle"></div>
+                    {{ "disclosure.no" | translate}}
+                </label>
+            </div>
+        </div>
+        <!-- Details -->
+        <ng-container *ngIf="x?.get('isDirectorTradeCompany').value">
+            <div class="form-group col p-0">
+                <label for="">{{ "Details" | translate }}</label>
+                <input formControlName="directorTradeCompanyDetails"
+                       type="text">
+            </div>
+        </ng-container>
+
+    </div>
+    <!-- Are you a Politically Exposed Person (PEP)? -->
+    <div class="input-box">
+        <h3>{{ "disclosure.PEP" | translate}}</h3>
+        <div class="flex gap-2 align-items-center">
+            <div class="custom-radio-input">
+                <input type="radio"
+                       formControlName="isPEP"
+                       (change)="onIsPEPChange()"
+                       [value]="true"
+                       id="true-isPEP">
+                <label for="true-isPEP">
+                    <div class="circle"></div>
+                    {{ "disclosure.yes" | translate}}
+                </label>
+            </div>
+            <div class="custom-radio-input">
+                <input type="radio"
+                       formControlName="isPEP"
+                       (change)="onIsPEPChange()"
+                       [value]="false"
+                       id="false-isPEP">
+                <label for="false-isPEP">
+                    <div class="circle"></div>
+                    {{ "disclosure.no" | translate}}
+                </label>
+            </div>
+        </div>
+        <!-- Options -->
+        <ng-container *ngIf="x?.get('isPEP').value">
+            <div class="flex flex-column gap-2">
+                <div class="custom-radio-input"
+                     *ngFor="let item of $PEPList; let i = index">
+                    <input type="radio"
+                           [value]="item.id"
+                           formControlName="pepSelect"
+                           [id]="'pepSelect' + i">
+                    <label [for]="'pepSelect' + i">
+                        <div class="circle"></div>
+                        {{item.name}}
+                    </label>
+                </div>
+            </div>
+        </ng-container>
+
+    </div>
+    <!-- Are you, the head of an international organization (HIO) as defined below?-->
+    <div class="input-box">
+        <h3>{{ "disclosure.HIO" | translate}}</h3>
+        <div class="flex gap-2 align-items-center">
+            <div class="custom-radio-input">
+                <input type="radio"
+                       formControlName="isHIO"
+                       [value]="true"
+                       id="true-isHIO">
+                <label for="true-isHIO">
+                    <div class="circle"></div>
+                    {{ "disclosure.yes" | translate}}
+                </label>
+            </div>
+            <div class="custom-radio-input">
+                <input type="radio"
+                       formControlName="isHIO"
+                       [value]="false"
+                       id="false-isHIO">
+                <label for="false-isHIO">
+                    <div class="circle"></div>
+                    {{ "disclosure.no" | translate}}
+                </label>
+            </div>
+        </div>
+    </div>
+    <!--Are you any of the following?-->
+    <div class="input-box">
+        <h3> {{ "Are you any of the following?" | translate}}</h3>
+        <div class="flex flex-column gap-2">
+            <div class="custom-radio-input"
+                 *ngFor="let item of $familyRelationList; let i = index">
+                <input type="radio"
+                       [value]="item.id"
+                       formControlName="familyRelation"
+                       [id]="'familyRelation' + i">
+                <label [for]="'familyRelation' + i">
+                    <div class="circle"></div>
+                    {{item.name}}
+                </label>
+            </div>
+        </div>
+    </div>
+</form>

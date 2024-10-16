@@ -1,0 +1,215 @@
+<div class="information-container">
+    <p-tabView>
+        <p-tabPanel header="Personal Information">
+            <div class="title">
+                <h3>My information</h3>
+                <div class="btn btn-sm btn-primary">
+                    <i class="pi pi-pencil"></i>
+                    Edit
+                </div>
+            </div>
+            <div class="information grid">
+                <div class="info-col col-3">
+                    <span class="label">First name</span>
+                    <span class="value">{{user?.firstName || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Last name</span>
+                    <span class="value">{{user?.lastName || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Country of Citizenship</span>
+                    <span class="value">{{user?.citizenship || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">City</span>
+                    <span class="value">{{user?.city || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Street</span>
+                    <span class="value">{{user?.street || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Province</span>
+                    <span class="value">{{user?.province || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Postal Code</span>
+                    <span class="value">{{user?.postalCode || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Date of birth</span>
+                    <span class="value">{{user?.dateOfBirth || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Martial Status</span>
+                    <span class="value">{{user?.martialStatus || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Social Insurance Number (SIN)</span>
+                    <span class="value">{{user?.sin || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Phone Number</span>
+                    <span class="value">{{user?.phoneNumber || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Email</span>
+                    <span class="value">{{user?.email || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Tax Resident of Canada?</span>
+                    <span class="value">{{user?.isCanadian || 'N/A'}}</span>
+                </div>
+            </div>
+        </p-tabPanel>
+        <p-tabPanel header="Employment Information">
+            <div class="title">
+                <h3>Employment information</h3>
+                <div class="btn btn-sm btn-primary">
+                    <i class="pi pi-pencil"></i>
+                    Edit
+                </div>
+            </div>
+            <div class="information grid">
+                <div class="info-col col-3">
+                    <span class="label">Employment status</span>
+                    <span class="value">{{user?.employmentStatus || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Business Sector</span>
+                    <span class="value">{{user?.businessSector || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Employer Name</span>
+                    <span class="value">{{user?.employmentName || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Employer Address</span>
+                    <span class="value">{{user?.employmentAddress || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Job title</span>
+                    <span class="value">{{user?.jobTitle || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Number of years</span>
+                    <span class="value">{{user?.employmentAge || 'N/A'}}</span>
+                </div>
+            </div>
+        </p-tabPanel>
+        <p-tabPanel header="Investment Information">
+            <div class="title">
+                <h3>Investment information</h3>
+                <div class="btn btn-sm btn-primary">
+                    <i class="pi pi-pencil"></i>
+                    Edit
+                </div>
+            </div>
+            <div class="information grid">
+                <div class="info-col col-3">
+                    <span class="label">What is your risk tolerance and ability to absorb risk for your total investment
+                        portfolio?</span>
+                    <span class="value">{{user?.riskLevel || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">What is the time horizon of your investment objective?</span>
+                    <span class="value">{{user?.timeInvestment || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">What is your overall investment objective?</span>
+                    <span class="value">{{user?.overallInvestment || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">How do you evaluate your investment knowledge?</span>
+                    <span class="value">{{user?.investmentKnowledge || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Check all the types of investments with which you have experience:</span>
+                    <span class="value">{{user?.investmentTypeExperiences || 'N/A'}}</span>
+                </div>
+            </div>
+        </p-tabPanel>
+        <p-tabPanel header="Financial Information">
+            <div class="title">
+                <h3>Financial information</h3>
+                <div class="btn btn-sm btn-primary">
+                    <i class="pi pi-pencil"></i>
+                    Edit
+                </div>
+            </div>
+            <div class="information grid">
+                <div class="info-col col-3">
+                    <span class="label">Annual Individual Income for each of the Last 2 Years</span>
+                    <span class="value">{{user?.riskLevel || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Estimated total net financial assets (include spouse/partner)</span>
+                    <span class="value">{{user?.timeInvestment || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Estimated Net Worth (include spouse/partner)</span>
+                    <span class="value">{{user?.overallInvestment || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Did you purchase any private investment in the last 12 months?</span>
+                    <span class="value">{{user?.investmentKnowledge || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Cash/GIC/Money Market</span>
+                    <span class="value">{{user?.investmentTypeExperiences || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Bonds/Fixed Income</span>
+                    <span class="value">{{user?.investmentTypeExperiences || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Public Stocks/Mutual Funds</span>
+                    <span class="value">{{user?.investmentTypeExperiences || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Alternative/Private Investment</span>
+                    <span class="value">{{user?.investmentTypeExperiences || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-3">
+                    <span class="label">Check all the types of investments with which you have experience:</span>
+                    <span class="value">{{user?.investmentTypeExperiences || 'N/A'}}</span>
+                </div>
+            </div>
+        </p-tabPanel>
+        <p-tabPanel header="Disclosures">
+            <div class="title">
+                <h3>Disclosures</h3>
+                <div class="btn btn-sm btn-primary">
+                    <i class="pi pi-pencil"></i>
+                    Edit
+                </div>
+            </div>
+            <div class="information grid">
+                <div class="info-col col-4">
+                    <span class="label">Are you or your spouse/partner an insider, a director or officer of a publicly
+                        traded company or of an affiliate of publicly traded company?</span>
+                    <span class="value">{{user?.riskLevel || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-4">
+                    <span class="label">Are you or your spouse/partner an insider, a director or officer of a publicly
+                        traded company or of an affiliate of publicly traded company??</span>
+                    <span class="value">{{user?.timeInvestment || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-4">
+                    <span class="label">Are you a Politically Exposed Person (PEP)?</span>
+                    <span class="value">{{user?.overallInvestment || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-4">
+                    <span class="label">Are you, the head of an international organization (HIO) as defined
+                        below?</span>
+                    <span class="value">{{user?.investmentKnowledge || 'N/A'}}</span>
+                </div>
+                <div class="info-col col-4">
+                    <span class="label"> Are you any of the following?</span>
+                    <span class="value">{{user?.investmentTypeExperiences || 'N/A'}}</span>
+                </div>
+            </div>
+        </p-tabPanel>
+    </p-tabView>
+</div>

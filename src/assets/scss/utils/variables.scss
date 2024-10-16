@@ -1,0 +1,20 @@
+// Color variables
+$color-secondary: #EDEFDC;
+$color-primary: #F2A413;
+$color-danger: red;
+$color-dark: #333333;
+$text-color-dark-400: #666666;
+
+// Font Variables
+$font-primary: "Montserrat", sans-serif;
+$font-secondary: "ROCA", sans-serif;
+
+// Css
+:root {
+    --color-secondary: #EDEFDC;
+    --color-primary: #F2A413;
+    --font-secondary: "ROCA", sans-serif;
+    --font-primary: "Montserrat", sans-serif;
+    --text-color-dark: #333333;
+    --text-color-dark-400: #666666;
+}

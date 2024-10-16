@@ -1,0 +1,49 @@
+<div class="login-container">
+    <form [formGroup]="form">
+        <h3>Welcome back!</h3>
+        <!-- Email -->
+        <div class="form-group">
+            <p-floatLabel>
+                <input pInputText
+                       formControlName="email"
+                       id="username" />
+                <label for="username">{{"Email" | translate}}</label>
+            </p-floatLabel>
+            <div class="error"
+                 *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
+                <i class="pi pi-info-circle"></i>
+                <span>This field is mandatory</span>
+            </div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+            <p-floatLabel>
+                <p-password [feedback]="false"
+                            formControlName="password"
+                            [toggleMask]="true" />
+                <label for="password">{{"account.password" | translate}}</label>
+            </p-floatLabel>
+            <div class="error"
+                 *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched">
+                <i class="pi pi-info-circle"></i>
+                <span>This field is mandatory</span>
+            </div>
+        </div>
+
+        <!-- Forget password link -->
+        <a [routerLink]="'/' +  routes.auth + '/' + routes.forgetPassword"
+           class="btn-link btn-link-primary forgot-password-link">{{"forgetPass.forgetPassword" | translate}}</a>
+
+        <!-- Login button -->
+        <button (click)="onLogin()"
+                [disabled]="form.invalid"
+                class="btn btn-primary">{{"account.login" | translate}}</button>
+
+        <!-- Registration link -->
+        <div class="registration-link flex gap-2 justify-content-center align-items-center">
+            Do not have an account? <a [routerLink]="'/' +  routes.auth + '/' + routes.signup"
+               class="btn-link btn-link-primary">{{"account.signUp" | translate}}</a>
+        </div>
+    </form>
+</div>

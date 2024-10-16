@@ -1,0 +1,223 @@
+<div class="stepper-container flex flex-column lg:flex-row">
+
+    <!-- Mobile branding -->
+    <div class="logo flex lg:hidden">
+        <img src="assets/images/logo.svg"
+             alt="">
+    </div>
+
+    <!-- Steps -->
+    <div class="col-4 p-0 hidden lg:flex">
+        <app-branding>
+            <ul class="steps-list">
+                <li *ngFor="let step of steps; let i = index"
+                    class="step"
+                    [class.active]="stepper.activeStep === i || step?.completed">
+                    <button>
+                        <div class="step-badge">
+                            <div class="badge-text">
+                                {{i + 1}}
+                            </div>
+                        </div>
+                        <div class="step-title">
+                            {{step.title}}
+                        </div>
+                    </button>
+                </li>
+            </ul>
+        </app-branding>
+    </div>
+
+    <!-- Content -->
+    <div class="col p-0">
+        <div class="stepper">
+
+            <p-stepper #stepper
+                       [(activeStep)]="activeStep"
+                       [linear]="true">
+
+                <p-stepperPanel *ngFor="let step of steps; let i = index">
+                    <ng-template pTemplate="content"
+                                 let-prevCallback="prevCallback"
+                                 let-nextCallback="nextCallback"
+                                 let-index="index">
+                        <div class="step-content">
+                            <div class="step-total">
+                                Step {{i + 1}} of {{steps.length}}
+                            </div>
+                            <div class="separator"></div>
+                            <div class="step-title">
+                                {{step?.title}}
+                            </div>
+                            <div class="step-desc">
+                                {{step?.description}}
+                            </div>
+
+                            <!-- Individual -->
+                            <form *ngIf="type == accountTypes.Individual"
+                                  [formGroup]="form"
+                                  class="step-form">
+                                <!-- Personal information -->
+                                <ng-container *ngIf="step.title === 'Personal Information'">
+                                    <app-individual-personal-information
+                                                                         [x]="form.get(i.toString())"></app-individual-personal-information>
+                                </ng-container>
+                                <!-- Employment information -->
+                                <ng-container *ngIf="step.title === 'Employment Information'">
+                                    <app-individual-employment-information
+                                                                           [x]="form.get(i.toString())"></app-individual-employment-information>
+                                </ng-container>
+                                <!-- Financial information -->
+                                <ng-container *ngIf="step.title === 'Financial Information'">
+                                    <app-individual-financial-information
+                                                                          [x]="form.get(i.toString())"></app-individual-financial-information>
+                                </ng-container>
+                                <!-- Investment information -->
+                                <ng-container *ngIf="step.title === 'Investment Information'">
+                                    <app-individual-investment-information
+                                                                           [x]="form.get(i.toString())"></app-individual-investment-information>
+                                </ng-container>
+                                <!-- Disclosure -->
+                                <ng-container *ngIf="step.title === 'Disclosure'">
+                                    <app-individual-disclosure [x]="form.get(i.toString())"></app-individual-disclosure>
+                                </ng-container>
+                                <!-- ID Verification -->
+                                <ng-container *ngIf="step.title === 'ID Verification'">
+                                    <app-id-verification></app-id-verification>
+                                </ng-container>
+                                <!-- Choose your advisor -->
+                                <ng-container *ngIf="step.title === 'Choose your advisor'">
+                                    <app-advisor [x]="form.get(i.toString())"
+                                                 [advisors]="advisors"></app-advisor>
+                                </ng-container>
+                            </form>
+
+                            <!-- Joint -->
+                            <form *ngIf="type == accountTypes.Joint"
+                                  [formGroup]="form"
+                                  class="step-form">
+                                <!-- Personal information -->
+                                <ng-container *ngIf="step.title === 'Personal Information'">
+                                    <app-individual-personal-information
+                                                                         [x]="form.get(i.toString())"></app-individual-personal-information>
+                                </ng-container>
+                                <!-- Spouse personal info -->
+                                <ng-container *ngIf="step.title === 'Spouse Information'">
+                                    <app-individual-personal-information
+                                                                         [x]="form.get(i.toString())"></app-individual-personal-information>
+                                </ng-container>
+                                <!-- Employment  info -->
+                                <ng-container *ngIf="step.title === 'Employment Information'">
+                                    <app-individual-employment-information
+                                                                           [x]="form.get(i.toString())"></app-individual-employment-information>
+                                </ng-container>
+                                <!-- Spouse Employment  info -->
+                                <ng-container *ngIf="step.title === 'Spouse Employment Information'">
+                                    <app-individual-employment-information
+                                                                           [x]="form.get(i.toString())"></app-individual-employment-information>
+                                </ng-container>
+                                <!-- Financial information -->
+                                <ng-container *ngIf="step.title === 'Financial Information'">
+                                    <app-individual-financial-information
+                                                                          [x]="form.get(i.toString())"></app-individual-financial-information>
+                                </ng-container>
+                                <!-- Investment information -->
+                                <ng-container *ngIf="step.title === 'Investment Information'">
+                                    <app-individual-investment-information
+                                                                           [x]="form.get(i.toString())"></app-individual-investment-information>
+                                </ng-container>
+                                <!-- Disclosure -->
+                                <ng-container *ngIf="step.title === 'Disclosure'">
+                                    <app-individual-disclosure [x]="form.get(i.toString())"></app-individual-disclosure>
+                                </ng-container>
+                                <!-- ID Verification -->
+                                <ng-container *ngIf="step.title === 'ID Verification'">
+                                    <app-id-verification></app-id-verification>
+                                </ng-container>
+                                <!-- Choose your advisor -->
+                                <ng-container *ngIf="step.title === 'Choose your advisor'">
+                                    <app-advisor [advisors]="advisors"
+                                                 [x]="form.get(i.toString())"></app-advisor>
+                                </ng-container>
+                            </form>
+
+                            <!-- Corporate -->
+                            <form *ngIf="type == accountTypes.Corporate"
+                                  [formGroup]="form"
+                                  class="step-form">
+                                <!--  Authorized Representatives  -->
+                                <ng-container *ngIf="step.title === 'Authorized Representatives'">
+                                    <app-individual-personal-information
+                                                                         [x]="form.get(i.toString())"></app-individual-personal-information>
+                                </ng-container>
+                                <!--  Business Information  -->
+                                <ng-container *ngIf="step.title === 'Business Information'">
+                                    <app-corporate-business-information
+                                                                        [x]="form.get(i.toString())"></app-corporate-business-information>
+                                </ng-container>
+                                <!--  Business disclosures  -->
+                                <ng-container *ngIf="step.title === 'Business Disclosures'">
+                                    <app-corporate-business-disclosures
+                                                                        [x]="form.get(i.toString())"></app-corporate-business-disclosures>
+                                </ng-container>
+                                <!--  Financial information  -->
+                                <ng-container *ngIf="step.title === 'Financial Information'">
+                                    <app-corporate-financial-information
+                                                                         [x]="form.get(i.toString())"></app-corporate-financial-information>
+                                </ng-container>
+                                <!--  Shareholders  -->
+                                <ng-container *ngIf="step.title === 'Shareholders'">
+                                    <app-corporate-shareholders
+                                                                [x]="form.get(i.toString())"></app-corporate-shareholders>
+                                </ng-container>
+                                <!-- Investment Information -->
+                                <ng-container *ngIf="step.title === 'Investment Information'">
+                                    <app-individual-investment-information
+                                                                           [x]="form.get(i.toString())"></app-individual-investment-information>
+                                </ng-container>
+                                <!-- Disclosure -->
+                                <ng-container *ngIf="step.title === 'Disclosure'">
+                                    <app-individual-disclosure [x]="form.get(i.toString())"></app-individual-disclosure>
+                                </ng-container>
+                                <!-- ID Verification -->
+                                <ng-container *ngIf="step.title === 'ID Verification'">
+                                    <app-id-verification></app-id-verification>
+                                </ng-container>
+                                <!-- Choose your advisor -->
+                                <ng-container *ngIf="step.title === 'Choose your advisor'">
+                                    <app-advisor [x]="form.get(i.toString())"
+                                                 [advisors]="advisors"></app-advisor>
+                                </ng-container>
+                            </form>
+
+                            <!-- Step Actions -->
+                            <div class="step-actions">
+                                <button (click)="prevCallback.emit();"
+                                        class="btn btn-secondary-outline">Prev</button>
+
+                                <div class="flex gap-2">
+                                    <!-- <button (click)="onSaveAsDraft()"
+                                            type="button"
+                                            class="btn btn-primary-outline">Save as Draft</button> -->
+                                    <button (click)="this.form.valid && (activeStep + 1) == this.steps.length ? register() :validateStep();"
+                                            [disabled]="(activeStep + 1) == this.steps.length && this.form.invalid"
+                                            class="btn btn-primary">{{this.form.valid && (activeStep + 1) ==
+                                        this.steps.length
+                                        ? 'Submit' :
+                                        'Next' }}</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </ng-template>
+                </p-stepperPanel>
+            </p-stepper>
+            <!-- <div class="col-4">
+                <p>{{form.value[activeStep] | json}}</p>
+            </div> -->
+        </div>
+
+
+
+    </div>
+</div>

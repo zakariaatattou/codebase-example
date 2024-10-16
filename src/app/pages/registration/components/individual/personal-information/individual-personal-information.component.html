@@ -1,0 +1,255 @@
+<form [formGroup]="x"
+      class="flex flex-column">
+    <div class="flex gap-4 justify-content-between flex-column lg:flex-row">
+        <!-- First Name -->
+        <div class="form-group col p-0">
+            <label for="">{{ "account.firstName" | translate }}</label>
+            <input formControlName="firstName"
+                   type="text">
+            <div class="error"
+                 *ngIf="x.get('firstName').hasError('required') && x.get('firstName').touched">
+                <i class="pi pi-info-circle"></i>
+                <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+            </div>
+        </div>
+        <!-- Last Name -->
+        <div class="form-group col p-0">
+            <label for="">{{ "account.lastName" | translate }}</label>
+            <input formControlName="lastName"
+                   type="text">
+            <div class="error"
+                 *ngIf="x.get('lastName').hasError('required') && x.get('lastName').touched">
+                <i class="pi pi-info-circle"></i>
+                <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+            </div>
+        </div>
+    </div>
+    <!-- Country of Citizenship -->
+    <div class="form-group col p-0">
+        <label for="">{{ "personalInformation.CountryOfCitizenship" | translate }}</label>
+        <p-dropdown formControlName="citizenship"
+                    (onChange)="onCountryChange($event)"
+                    [options]=" $countries"
+                    [filter]="true"
+                    optionLabel="name" />
+        <div class="error"
+             *ngIf="x.get('citizenship').hasError('required') && x.get('citizenship').touched">
+            <i class="pi pi-info-circle"></i>
+            <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+        </div>
+    </div>
+    <!-- Tax Resident of Canada? -->
+    <div class="form-group col p-0">
+        <label for="">{{"personalInformation.taxResidentOfCanada" | translate}}</label>
+        <div class="flex gap-2 align-items-center">
+            <div class="custom-radio-input">
+                <input type="radio"
+                       formControlName="isCanadian"
+                       [value]="true"
+                       id="isCanadian-true">
+                <label for="isCanadian-true">
+                    <div class="circle"></div>
+                    {{ "disclosure.yes" | translate}}
+                </label>
+            </div>
+            <div class="custom-radio-input">
+                <input type="radio"
+                       formControlName="isCanadian"
+                       [value]="false"
+                       id="isCanadian-false">
+                <label for="isCanadian-false">
+                    <div class="circle"></div>
+                    {{ "disclosure.no" | translate}}
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Insurance Number (SIN) -->
+    <div class="form-group"
+         *ngIf="x?.get('isCanadian')?.value === true">
+        <label for="">{{ "personalInformation.socialInsuranceNumber" | translate }}</label>
+
+        <p-inputMask mask="999-999-999"
+                     formControlName="socialInsuranceNo"
+                     placeholder="123-456-789" />
+        <div class="error"
+             *ngIf="x.get('socialInsuranceNo').hasError('required') && x.get('socialInsuranceNo').touched">
+            <i class="pi pi-info-circle"></i>
+            <span>{{"personalInformation.mandatoryField" | translate }}</span>
+        </div>
+        <div class="error"
+             *ngIf="x.get('socialInsuranceNo').hasError('pattern')  ">
+            <i class="pi pi-info-circle"></i>
+            <span>{{"Invalid SIN value" | translate }}</span>
+        </div>
+    </div>
+    <!-- Address -->
+    <div class="form-group col p-0">
+        <label for="">{{ "Address" | translate }}</label>
+        <p-autoComplete [suggestions]="addressSuggestions"
+                        (onSelect)="onAddressSelect($event)"
+                        [forceSelection]="true"
+                        formControlName="address"
+                        [showClear]="true"
+                        (completeMethod)="onSearchAddresses($event)">
+            <ng-template let-suggestion
+                         pTemplate="item">
+                <div>
+                    <strong>{{ suggestion.placeLabel }}</strong>
+                    <p>
+                        {{ suggestion.number }} {{ suggestion.street }}
+                        {{ suggestion.city }} {{ suggestion.stateCode }} {{ suggestion.postalCode }}
+                        {{ suggestion.country }}
+                    </p>
+                    <small>Lat: {{ suggestion.latitude }}, Lng: {{ suggestion.longitude }}</small>
+                </div>
+            </ng-template>
+        </p-autoComplete>
+    </div>
+
+
+    <ng-container *ngIf="x?.get('address').valid">
+        <div class="flex gap-4 justify-content-between flex-column lg:flex-row">
+            <!-- Country of residence  -->
+            <div class="form-group col p-0">
+                <label for="">{{ "Country of Residence" | translate }}</label>
+                <p-dropdown formControlName="countryOfResidence"
+                            (onChange)="onCountryChange($event)"
+                            [options]=" $countries"
+                            [filter]="true"
+                            optionLabel="name" />
+                <div class="error"
+                     *ngIf="x.get('countryOfResidence').hasError('required') && x.get('countryOfResidence').touched">
+                    <i class="pi pi-info-circle"></i>
+                    <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+                </div>
+            </div>
+            <!-- City -->
+            <div class="form-group col p-0">
+                <label for="">{{ "City" | translate }}</label>
+                <p-dropdown formControlName="city"
+                            [options]="$cities"
+                            [virtualScroll]="true"
+                            [lazy]="true"
+                            [filter]="true"
+                            [virtualScrollItemSize]="40"
+                            optionLabel="name" />
+                <div class="error"
+                     *ngIf="x.get('city').hasError('required') && x.get('city').touched">
+                    <i class="pi pi-info-circle"></i>
+                    <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="flex gap-4 justify-content-between flex-column lg:flex-row">
+            <!-- Province -->
+            <div class="form-group col p-0">
+                <label for="">{{ "Province/State" | translate }}</label>
+                <p-dropdown formControlName="province"
+                            [options]="$states"
+                            [virtualScroll]="true"
+                            [lazy]="true"
+                            [filter]="true"
+                            [virtualScrollItemSize]="40"
+                            optionLabel="name" />
+                <div class="error"
+                     *ngIf="x.get('province').hasError('required') && x.get('province').touched">
+                    <i class="pi pi-info-circle"></i>
+                    <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+                </div>
+            </div>
+            <!-- Street -->
+            <div class="form-group col p-0">
+                <label for="">{{ "Street" | translate }}</label>
+                <input formControlName="street">
+                <div class="error"
+                     *ngIf="x.get('street').hasError('required') && x.get('street').touched">
+                    <i class="pi pi-info-circle"></i>
+                    <span>{{"personalInformation.mandatoryField" | translate }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex gap-4 justify-content-between flex-column lg:flex-row">
+            <!-- Postal code -->
+            <div class="form-group col p-0">
+                <label for="">{{ "Postal Code" | translate }}</label>
+                <input formControlName="postalCode"
+                       type="text">
+                <div class="error"
+                     *ngIf="x.get('postalCode').hasError('required') && x.get('postalCode').touched">
+                    <i class="pi pi-info-circle"></i>
+                    <span>{{"personalInformation.mandatoryField" | translate }}</span>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+    <div class="flex gap-4 justify-content-between flex-column lg:flex-row">
+        <!-- Martial Status -->
+        <div class="form-group col p-0">
+            <label for="">{{ "personalInformation.martialStatus" | translate }}</label>
+            <p-dropdown formControlName="maritalStatus"
+                        [filter]="true"
+                        [options]="lookupService.getMartialStatusList()" />
+            <div class="error"
+                 *ngIf="x.get('maritalStatus').hasError('required') && x.get('maritalStatus').touched">
+                <i class="pi pi-info-circle"></i>
+                <span>{{"personalInformation.mandatoryField" | translate }}</span>
+            </div>
+        </div>
+        <!-- Date of birth -->
+        <div class="form-group col p-0">
+            <label for="">{{ "personalInformation.dateOfBirth" | translate }}</label>
+            <p-calendar [iconDisplay]="'input'"
+                        formControlName="dateOfBirth"
+                        [showIcon]="true"
+                        inputId="icondisplay" />
+            <div class="error"
+                 *ngIf="x.get('dateOfBirth').hasError('required') && x.get('dateOfBirth').touched">
+                <i class="pi pi-info-circle"></i>
+                <span>{{"personalInformation.mandatoryField" | translate }}</span>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- Phone Number -->
+    <div class="form-group">
+        <label for="">{{ "account.phoneNumber" | translate }}</label>
+        <app-phone-input formControlName="phoneNumber"></app-phone-input>
+        <div class="error"
+             *ngIf="x.get('phoneNumber').hasError('required') && x.get('phoneNumber').touched">
+            <i class="pi pi-info-circle"></i>
+            <span>{{"personalInformation.mandatoryField" | translate }}</span>
+        </div>
+    </div>
+    <!-- Email -->
+    <div class="form-group">
+        <label for="">{{ "account.email" | translate }}</label>
+        <input type="email"
+               formControlName="email">
+        <div class="error"
+             *ngIf="x.get('email').hasError('required') && x.get('email').touched">
+            <i class="pi pi-info-circle"></i>
+            <span>{{"personalInformation.mandatoryField" | translate }}</span>
+        </div>
+    </div>
+
+    <!-- Tax Resident of Canada? -->
+    <!-- <div class="form-group col p-0">
+        <label for="">{{ "personalInformation.taxResidentOfCanada" | translate }}</label>
+        <p-inputSwitch formControlName="isCanadian"
+                       inputId="binary" />
+    </div> -->
+
+</form>

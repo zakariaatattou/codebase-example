@@ -1,0 +1,10 @@
+<div id="phone-container">
+    <input type="tel"
+           #textInput
+           id="phone"
+           [readonly]="readonly"
+           [formControl]="value"
+           placeholder="Cell phone"
+           oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+           preventSpace />
+</div>

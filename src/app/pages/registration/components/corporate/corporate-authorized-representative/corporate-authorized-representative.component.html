@@ -1,0 +1,84 @@
+<form class="flex flex-column">
+    <div class="flex gap-4 justify-content-between flex-column lg:flex-row">
+        <!-- First Name -->
+        <div class="form-group col p-0">
+            <label for="">{{ "account.firstName" | translate }}</label>
+            <input type="text">
+            <!-- <div class="error"
+                 *ngIf="x.get('firstName').hasError('required') && x.get('firstName').touched">
+                <i class="pi pi-info-circle"></i>
+                <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+            </div> -->
+        </div>
+        <!-- Last Name -->
+        <div class="form-group col p-0">
+            <label for="">{{ "account.lastName" | translate }}</label>
+            <input type="text">
+            <!-- <div class="error"
+                 *ngIf="x.get('lastName').hasError('required') && x.get('lastName').touched">
+                <i class="pi pi-info-circle"></i>
+                <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+            </div> -->
+        </div>
+    </div>
+    <div class="flex gap-4 justify-content-between flex-column lg:flex-row">
+        <!-- Country -->
+        <div class="form-group col p-0">
+            <label for="">{{ "Country" | translate }}</label>
+            <p-dropdown [options]="[]"
+                        optionLabel="name" />
+            <!-- <div class="error"
+                 *ngIf="x.get('firstName').hasError('required') && x.get('firstName').touched">
+                <i class="pi pi-info-circle"></i>
+                <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+            </div> -->
+        </div>
+        <!-- City -->
+        <div class="form-group col p-0">
+            <label for="">{{ "City" | translate }}</label>
+            <p-dropdown [options]="[]"
+                        optionLabel="name" />
+            <!-- <div class="error"
+                 *ngIf="x.get('lastName').hasError('required') && x.get('lastName').touched">
+                <i class="pi pi-info-circle"></i>
+                <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+            </div> -->
+        </div>
+    </div>
+
+    <div class="flex gap-4 justify-content-between flex-column lg:flex-row">
+        <!-- Street -->
+        <div class="form-group col p-0">
+            <label for="">{{ "Street" | translate }}</label>
+            <input type="text">
+            <!-- <div class="error"
+                 *ngIf="x.get('firstName').hasError('required') && x.get('firstName').touched">
+                <i class="pi pi-info-circle"></i>
+                <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+            </div> -->
+        </div>
+        <!-- Postal code -->
+        <div class="form-group col p-0">
+            <label for="">{{ "Postal Code" | translate }}</label>
+            <input type="text">
+            <!-- <div class="error"
+                 *ngIf="x.get('lastName').hasError('required') && x.get('lastName').touched">
+                <i class="pi pi-info-circle"></i>
+                <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- Phone Number -->
+    <div class="form-group">
+        <label for="">{{ "account.phoneNumber" | translate }}</label>
+        <app-phone-input></app-phone-input>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+        <label for="">{{ "account.email" | translate }}</label>
+        <input type="email">
+    </div>
+
+</form>

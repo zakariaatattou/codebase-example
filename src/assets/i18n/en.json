@@ -1,0 +1,162 @@
+{
+  "account": {
+    "createAccount": "Create account",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "cellPhone": "Cell phone",
+    "signUp": "Sign up",
+    "userName": "User Name",
+    "login": "Login",
+    "signIn": "Sign in",
+    "confirm": "Confirm",
+    "submit": "Submit",
+    "phoneNumber": "Phone Number"
+  },
+  "forgetPass": {
+    "forgetPassword": "Forget Password",
+    "typeYourE-mailAddress": "Type your e-mail address below and we will send you a link to reset your password.",
+    "confirm": "Confirm"
+  },
+  "accountType": {
+    "ChooseYourAccountType": "Choose your account type",
+    "SelectTheAccountYouWouldLikeToOpen": "Select the account you would like to open",
+    "individual": "Individual",
+    "joint": "Joint",
+    "corporate": "Corporate"
+  },
+  "changePass": {
+    "forgetPassword": "Forget Password",
+    "minimumCharacters": "8 characters minimum",
+    "oneLowercaseLetter": "One lowercase letter",
+    "oneSpecialCharacter": "One special character",
+    "oneUppercaseLetter": "One Uppercase letter",
+    "oneNumber": "One number"
+  },
+  "otp": {
+    "verifyYourEmail": "Verify Your Email",
+    "emailText": "We have sent a verification code to your email:"
+  },
+  "success": {
+    "congratulation": "Congratulation",
+    "successfullyCreated": "Your account has been successfully created",
+    "completeYourInformationToStart": "Complete your information to start\n the investment journey",
+    "completeYourInfo": "Complete your information"
+  },
+  "advisor": {
+    "adamjohns": "Adam johns",
+    "financeProfessional": "Seasoned finance professional with 15+ years of expertise in portfolio management and risk assessment.",
+    "select": "Select",
+    "theKYC": "I consent to the KYC (Know Your Customer) process by GrowWise."
+  },
+  "disclosure": {
+    "yourSpousePartnerOwnOrControl": "Are you or your spouse/partner an insider, a director or officer of a publicly traded company or of an affiliate of publicly traded company?",
+    "yes": "Yes",
+    "no": "No",
+    "PEP": "Are you a Politically Exposed Person (PEP)?",
+    "HIO": "Are you, the head of an international organization (HIO) as defined\n            below?",
+    "areYouAnyOfTheFollowing?": "Are you any of the following?",
+    "pepOrHio": "A spouse, common-law partner, child, mother, father, brother,\n                    sister (including half-brother/sister), or mother or father of a\n                    spouse or common-law partner of a PEP or HIO",
+    "aCloseAssociateOfAPEPOrHIO.": "A close associate of a PEP or HIO.",
+    "none": "None"
+  },
+  "employmentInformation": {
+    "employmentStatus": "Employment status",
+    "employee": "Employee",
+    "selfEmployment": "Self-employment",
+    "retired": "Retired",
+    "unemployed": "Unemployed",
+    "employerName": "Employer Name",
+    "businessSector": "Business Sector",
+    "employerAddress": "Employer Address",
+    "jobTitle": "Job title",
+    "numberOfYears": "Number of years"
+  },
+  "financialInformation": {
+    "annualIndividual": "Annual Individual Income for each of the Last 2 Years",
+    "lessThan$75,000": "Less than $75,000",
+    "$75,000-$200,000": "$75,000 - $200,000",
+    "moreThan$200,000": " More than $200,000",
+    "annualHousehold ": "Annual Household Income for each of the Last 2 Years",
+    "estimatedTotal": "Estimated total net financial assets (include spouse/partner)",
+    "compositionOfFinancialAssets": "Composition of financial assets",
+    "cashGICMoneyMarket": "Cash/GIC/Money Market",
+    "bondsFixedIncome": "Bonds/Fixed Income",
+    "publicStocksMutualFunds": "Public Stocks/Mutual Funds",
+    "alternativePrivateInvestment": "Alternative/Private Investment",
+    "total": "Total",
+    "estimatedNetWorth": "Estimated Net Worth (include spouse/partner)",
+    "purchasePrivateInvestment": "Did you purchase any private investment in the last 12 months?",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "idVerification": {
+    "verifyYourIdentity": "Verify your identity",
+    "safetyAndSecurity": "For the safety and security of your account, we need to verify your identity. This process is essential to\n            protect your personal information and ensure that your account is compliant with regulatory requirements.\n            Identity verification helps us confirm that only authorized users have access to their accounts, which helps\n            prevent fraud and unauthorized access. Your cooperation in this process is greatly appreciated and will help\n            us maintain a secure environment for all users"
+  },
+  "investmentInformation": {
+    "riskTolerance": "What is your risk tolerance and ability to absorb risk for your total\n            investment portfolio?",
+    "low": "Low",
+    "medium": "Medium",
+    "high": "High",
+    "investmentObjective": "What is the time horizon of your investment objective?",
+    "lessThan5Years": "Less than 5 years",
+    "5to10Years": "5 to 10 years",
+    "moreThan10Years": "More than 10 years",
+    "overallInvestmentObjective": "What is your overall investment objective?",
+    "income": "Income",
+    "growth": "Growth",
+    "incomeAndGrowth": "Income & Growth",
+    "investmentKnowledge": "How do you evaluate your investment knowledge?",
+    "limited": "Limited",
+    "good": "Good",
+    "sophisticated": "Sophisticated",
+    "typesOfInvestments": "Check all the types of investments with which you have experience:",
+    "savingsGICMoneyMarket": "Savings/GIC/Money Market",
+    "bondsFixedIncome": "Bonds/Fixed Income",
+    "publicStocksETFsMutualFunds": "Public Stocks/ETFs/ Mutual Funds",
+    "fundsREITsHedge": "Private Investments (Mortgage funds, REITs, Hedge Funds,etc.)"
+  },
+  "personalInformation": {
+    "mandatoryField": "This field is mandatory",
+    "address": "Address",
+    "dateOfBirth": "Date of birth",
+    "martialStatus": "Martial Status",
+    "CountryOfCitizenship": "Country of Citizenship",
+    "taxResidentOfCanada": "Tax Resident of Canada?",
+    "socialInsuranceNumber": "Social Insurance Number (SIN)"
+  },
+  "featuresContainer": {
+    "whyGrowWise": "Why choose GrowWise",
+    "empoweringRetirees": "We are empowering retirees, building and financing stronger businesses and driving a more sustainable\n                future.",
+    "documentsAreReliable": "Documents are reliable",
+    "exclusiveDiscounts": "Explore 26,000+ stores and enjoy\n                        exclusive discounts with the Farah\n                        discounts program!",
+    "differentIdeas": "Different ideas",
+    "reportAndExplain": "Report and explain"
+  },
+  "aboutUs": {
+    "getInsights": "Get Insights into your ",
+    "futureInvest": "Future invest",
+    "trackRegularExpenses": "Not sure where all your money's going? Our Insights\n                feature automatically categories your spending in real\n                time. Track regular expenses, keep a pulse on your\n                costs, and spot opportunities for savings. Everyday\n                budgeting has never been easier.",
+    "learnAboutUs": " Learn about us"
+  },
+  "feedback": {
+    "customerFeedback": "Customer feedback",
+    "empoweringRetirees": " We are empowering retirees, building and financing stronger businesses and driving a more sustainable\n                future.",
+    "strategicTreasuryManagement": "automation and real-time rates have given us\n                        greater control over our foreign exchange costs, allowing us\n                        to focus on strategic treasury management",
+    "johnDoe": "John Doe",
+    "building": "Building & Construction Materials"
+  },
+  "howItWorks": {
+    "howItWorks": "How it works",
+    "howToInvestInOurOpportunities": "Here we show short video about how to invest in our opportunities and manage your wallet and your profile\n                Here we show short video about how to invest in our opportunities and manage your wallet and your\n                profile"
+  },
+  "opportunities": {
+    "opportunity": "Opportunity",
+    "landed": "Landed",
+    "empoweringRetirees": "We are empowering retirees, building and financing stronger businesses and driving a more sustainable\n                future.",
+    "allOpportunities": "All Opportunities"
+  }
+}

@@ -1,0 +1,47 @@
+.opportunities-container {
+    display: flex;
+    justify-content: center;
+    padding: 3.875rem 1rem;
+    background-color: #F8F8F8;
+
+    .opportunities-inner {
+        max-width: 1440px;
+        display: flex;
+        flex-direction: column;
+        gap: 3.375rem;
+
+        .title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.5rem;
+            text-align: center;
+
+            h2 {
+                font-family: var(--font-secondary);
+                font-weight: 400;
+                font-size: 3rem;
+                line-height: 140%;
+                color: #000000;
+
+                span {
+                    color: #FFAF44;
+                }
+            }
+
+            p {
+                font-weight: 500;
+                font-size: 1.5rem;
+                line-height: 140%;
+                color: #444444;
+                max-width: 776px;
+            }
+        }
+
+        .cta {
+            margin: 0 auto;
+        }
+
+    }
+
+}

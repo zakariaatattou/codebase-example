@@ -1,0 +1,76 @@
+<div class="investment-container">
+    <div class="information-container">
+        <p-tabView>
+            <p-tabPanel header="Overview">
+                <div class="filters flex">
+                    <div class="col pl-0">
+                        <p-iconField iconPosition="left">
+                            <p-inputIcon styleClass="pi pi-search" />
+                            <input type="text"
+                                   pInputText
+                                   placeholder="Search" />
+                        </p-iconField>
+                    </div>
+                    <div class="col">
+                        <p-calendar [iconDisplay]="'input'"
+                                    class="calendar-input"
+                                    [showIcon]="true"
+                                    placeholder="From"
+                                    inputId="icondisplay" />
+                    </div>
+                    <div class="col">
+                        <p-calendar [iconDisplay]="'input'"
+                                    class="calendar-input"
+                                    [showIcon]="true"
+                                    placeholder="To"
+                                    inputId="icondisplay" />
+                    </div>
+                    <div class="col-2">
+                        <button class="popularity-btn">
+                            Status
+                            <i class="pi pi-chevron-down"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+                <p-table [value]="[1,23,4]"
+                         [tableStyle]="{ 'min-width': '50rem' }">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Settlement Date</th>
+                            <th>Activity</th>
+                            <th>Unit Price</th>
+                            <th>Quantity</th>
+                            <th>Total Investment</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body"
+                                 let-product>
+                        <tr>
+                            <td>{{ "Product Name 1" }}</td>
+                            <td>{{ "21-03-2022" }}</td>
+                            <td>{{ "Purchase" }}</td>
+                            <td>{{ "$10" }}</td>
+                            <td>{{ "2,500" }}</td>
+                            <td>{{ "$25,000" }}</td>
+                            <td>{{ "Cancelled" }}</td>
+                            <td>
+                                <button class="table-action">
+                                    <i class="pi pi-eye"></i>
+                                    View
+                                </button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </p-tabPanel>
+            <p-tabPanel header="Updates from issuer">
+
+            </p-tabPanel>
+        </p-tabView>
+    </div>
+</div>

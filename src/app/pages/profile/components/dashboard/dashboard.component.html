@@ -1,0 +1,130 @@
+<div class="dashboard-container">
+    <!-- Filters -->
+    <div class="filters">
+        <div class="dates">
+            <ul>
+                <li>
+                    <button class="active">All Time</button>
+                </li>
+                <li>
+                    <button>12 Months</button>
+                </li>
+                <li>
+                    <button>30 Days</button>
+                </li>
+                <li>
+                    <button>7 Days</button>
+                </li>
+                <li>
+                    <button>24 Hour</button>
+                </li>
+            </ul>
+        </div>
+        <div class="datepicker">
+            <p-calendar [iconDisplay]="'input'"
+                        class="calendar-input"
+                        [showIcon]="true"
+                        placeholder="Select date"
+                        inputId="icondisplay" />
+        </div>
+    </div>
+    <!-- Stats   -->
+    <div class="stats flex gap-2">
+        <div class="card col"
+             *ngFor="let item of [1,23,4,4]">
+            <div class="icon">
+                <img src="/assets/icons/file-badge.svg"
+                     alt="">
+            </div>
+            <h3>CM</h3>
+
+            <h1>$1,280</h1>
+        </div>
+    </div>
+    <!-- Account details -->
+    <div class="account-details flex gap-4">
+        <!-- Details -->
+        <div class="details card col-5">
+            <div class="title">
+                Account details
+            </div>
+
+            <ul>
+                <li>
+                    <span class="label">First name</span>
+                    <span class="value">Zakaria</span>
+                </li>
+                <li>
+                    <span class="label">Last Name </span>
+                    <span class="value">Zakaria</span>
+                </li>
+                <li>
+                    <span class="label">Province</span>
+                    <span class="value">Zakaria</span>
+                </li>
+                <li>
+                    <span class="label">Country of Citizenship </span>
+                    <span class="value">Zakaria</span>
+                </li>
+                <li>
+                    <span class="label">Martial Status </span>
+                    <span class="value">Zakaria</span>
+                </li>
+                <li>
+                    <span class="label">SIN </span>
+                    <span class="value">Zakaria</span>
+                </li>
+            </ul>
+        </div>
+        <!-- Chart -->
+        <div class="card col">
+            <div class="title">
+                Sectors
+            </div>
+
+            <p-chart type="doughnut"
+                     height="260px"
+                     [data]="data"
+                     [options]="options" />
+        </div>
+    </div>
+    <!-- Products -->
+    <div class="products card">
+        <div class="title">
+            Products
+        </div>
+        <p-table [value]="[1,23,4]"
+                 [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Product Name</th>
+                    <th>Settlement Date</th>
+                    <th>Activity</th>
+                    <th>Unit Price</th>
+                    <th>Quantity</th>
+                    <th>Total Investment</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body"
+                         let-product>
+                <tr>
+                    <td>{{ "Product Name 1" }}</td>
+                    <td>{{ "21-03-2022" }}</td>
+                    <td>{{ "Purchase" }}</td>
+                    <td>{{ "$10" }}</td>
+                    <td>{{ "2,500" }}</td>
+                    <td>{{ "$25,000" }}</td>
+                    <td>{{ "Cancelled" }}</td>
+                    <td>
+                        <button class="table-action">
+                            <i class="pi pi-eye"></i>
+                            View
+                        </button>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>

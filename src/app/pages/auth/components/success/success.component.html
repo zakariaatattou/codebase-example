@@ -1,0 +1,30 @@
+<div class="success-container">
+    <div class="inner">
+        <img src="assets/icons/check.svg"
+             alt="">
+
+        <span class="text-1">{{ "success.congratulation" | translate }}</span>
+
+        <p class="text-2">{{ "success.successfullyCreated" | translate }}</p>
+
+        <ng-container *ngIf="user?.userType == userTypes.Investor">
+            <p class="text-3"> {{ "success.completeYourInformationToStart" | translate }} </p>
+
+            <a [routerLink]="'/' + webRoutes.auth + '/' + webRoutes.accountType">
+                <button class="btn btn-primary">{{ "success.completeYourInfo" | translate }}</button>
+            </a>
+
+        </ng-container>
+
+
+        <ng-container *ngIf="user?.userType == userTypes.Entrepreneur">
+            <p class="text-3"> {{ "Your account has been successfully created, Add products from your dashboard, we will
+                check and get back to you" | translate }} </p>
+            <a [routerLink]="'/' + webRoutes.home + '/' + webRoutes.opportunities">
+                <button class="btn btn-primary">{{ "Browse opportunities" | translate }}</button>
+            </a>
+        </ng-container>
+
+
+    </div>
+</div>

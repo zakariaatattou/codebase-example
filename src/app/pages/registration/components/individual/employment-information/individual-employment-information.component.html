@@ -1,0 +1,89 @@
+<form [formGroup]="x"
+      class="flex flex-column">
+    <!-- Employment status -->
+    <div class="form-group">
+        <label for="">{{ "employmentInformation.employmentStatus" | translate }}</label>
+        <div class="flex flex-column gap-2">
+            <div class="custom-radio-input"
+                 *ngFor="let item of lookupService.getEmploymentStatusList(); let i = index">
+                <input type="radio"
+                       [value]="item.id"
+                       formControlName="employmentStatus"
+                       [id]="'employmentStatus' + i">
+                <label [for]="'employmentStatus' + i">
+                    <div class="circle"></div>
+                    {{item.name}}
+                </label>
+            </div>
+        </div>
+    </div>
+    <ng-container *ngIf="x?.get('employmentStatus').value === 1 || x?.get('employmentStatus').value === 2 ">
+        <!-- Employer Name -->
+        <div class="form-group">
+            <label for="">{{ "employmentInformation.employerName" | translate }}</label>
+            <input type="text"
+                   formControlName="employmentName"
+                   id="">
+            <div class="error"
+                 *ngIf="x.get('employmentName').hasError('required') && x.get('employmentName').touched">
+                <i class="pi pi-info-circle"></i>
+                <span>{{"personalInformation.mandatoryField" | translate }}</span>
+            </div>
+        </div>
+        <!-- Business Sector -->
+        <div class="form-group">
+            <label for="">{{ "employmentInformation.businessSector" | translate }}</label>
+            <p-dropdown [options]="lookupService.getBusinessSectorList()"
+                        optionLabel="name"
+                        optionValue="id"
+                        [filter]="true"
+                        formControlName="businessSector" />
+            <div class="error"
+                 *ngIf="x.get('businessSector').hasError('required') && x.get('businessSector').touched">
+                <i class="pi pi-info-circle"></i>
+                <span>{{"personalInformation.mandatoryField" | translate }}</span>
+            </div>
+        </div>
+        <!-- Employer Address -->
+        <div class="form-group">
+            <label for="">{{ "employmentInformation.employerAddress" | translate }}</label>
+            <input type="text"
+                   name=""
+                   formControlName="employmentAddress"
+                   id="">
+            <div class="error"
+                 *ngIf="x.get('employmentAddress').hasError('required') && x.get('employmentAddress').touched">
+                <i class="pi pi-info-circle"></i>
+                <span>{{"personalInformation.mandatoryField" | translate }}</span>
+            </div>
+        </div>
+        <div class="flex gap-4 justify-content-between flex-column lg:flex-row">
+            <!-- Job title -->
+            <div class="form-group col p-0">
+                <label for="">{{ "employmentInformation.jobTitle" | translate }}</label>
+                <input type="text"
+                       name=""
+                       formControlName="jobTitle"
+                       id="">
+                <div class="error"
+                     *ngIf="x.get('jobTitle').hasError('required') && x.get('jobTitle').touched">
+                    <i class="pi pi-info-circle"></i>
+                    <span>{{"personalInformation.mandatoryField" | translate }}</span>
+                </div>
+            </div>
+            <!-- Number of years -->
+            <div class="form-group col p-0">
+                <label for="">{{ "employmentInformation.numberOfYears" | translate }}</label>
+                <input type="number"
+                       formControlName="employmentAge"
+                       id="">
+                <div class="error"
+                     *ngIf="x.get('employmentAge').hasError('required') && x.get('employmentAge').touched">
+                    <i class="pi pi-info-circle"></i>
+                    <span>{{"personalInformation.mandatoryField" | translate }}</span>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+</form>

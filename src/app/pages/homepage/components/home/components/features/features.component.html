@@ -1,0 +1,22 @@
+<div class="features-container">
+    <div class="inner">
+        <div class="title">
+            <h2>
+                {{ content?.whyGrowwise?.Title }}
+            </h2>
+            <p>
+              {{ content?.whyGrowwise?.Description }}
+            </p>
+        </div>
+
+        <div class="features-cards">
+          <div class="feature-card"  *ngFor="let item of content?.whyGrowwise?.feature">
+                <img [src]="environment.cmsUrl+item?.photo?.url" alt="">
+                <div class="details">
+                    <h4>{{ item?.title }}</h4>
+                    <p>{{ item?.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

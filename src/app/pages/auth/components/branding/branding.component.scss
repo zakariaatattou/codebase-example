@@ -1,0 +1,53 @@
+.branding-container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-secondary);
+    height: 100%;
+    padding: 2.125rem 4.8125rem;
+
+    img {
+        width: 197px;
+        height: 48px;
+        margin-bottom: 79px;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        gap: .75rem;
+        max-width: 379px;
+
+        h3 {
+            font-weight: 400;
+            font-size: 1.5rem;
+            line-height: 140%;
+            color: var(--color-dark);
+            font-family: var(--font-secondary);
+
+        }
+
+        p {
+            font-weight: 500;
+            font-size: 1rem;
+            line-height: 140%;
+            color: var(--text-color-dark-400);
+            margin-bottom: 1.875rem;
+        }
+    }
+
+    .version {
+        position: fixed;
+        bottom: 1rem;
+        left: 1rem;
+        color: var(--color-primary);
+
+    }
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .branding-container {
+        padding: 2.125rem 1.8125rem;
+
+    }
+}

@@ -1,0 +1,32 @@
+<div class="otp-container">
+    <form action="">
+        <h3>Verify Your Email</h3>
+
+        <div class="email-text">We have sent a verification code to your email: <span>{{routeData?.user?.email}}</span>
+        </div>
+
+        <div class="form-group">
+            <p-inputOtp [formControl]="otp" />
+        </div>
+
+        <!-- Submit button -->
+        <button class="btn btn-primary"
+                [disabled]="otp.invalid"
+                type="button"
+                (click)="verifyOTP()">{{ "account.submit" | translate }}</button>
+
+        <!-- Privacy policy -->
+        <div class="privacy-link">By signing up, you're agreeing to GrowWise's <a href=""
+               class="btn-link btn-link-primary">Terms and
+                Conditions</a> and <a href=""
+               class="btn-link btn-link-primary">Privacy
+                Policy</a>.</div>
+
+
+        <!-- Login link -->
+        <div class="registration-link flex gap-2 justify-content-center align-items-center">
+            Already have an account? <a [routerLink]="'/' +  routes.auth + '/' + routes.login"
+               class="btn-link btn-link-primary"> {{ "account.signIn" | translate}}</a>
+        </div>
+    </form>
+</div>

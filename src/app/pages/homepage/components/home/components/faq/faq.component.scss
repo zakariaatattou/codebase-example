@@ -1,0 +1,90 @@
+:host ::ng-deep .faq-container {
+    padding: 3.875rem 1rem;
+    background-color: #F8F8F8;
+
+    .inner {
+        max-width: 980px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 3.375rem;
+
+        .title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.5rem;
+            text-align: center;
+
+            h2 {
+                font-family: var(--font-secondary);
+                font-weight: 400;
+                font-size: 3rem;
+                line-height: 140%;
+                color: #000000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 116px;
+                background-image: url("/assets/images/title-shape.svg");
+                background-repeat: no-repeat;
+                background-position: right;
+                width: fit-content;
+                text-align: center;
+            }
+
+            p {
+                font-weight: 500;
+                font-size: 1.5rem;
+                line-height: 140%;
+                color: #444444;
+                max-width: 776px;
+            }
+        }
+
+        .p-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+
+        .p-accordion-tab {
+
+            padding: 1.5rem;
+            background: #FFFFFF;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+
+            .p-accordion-header-link {
+                background-color: transparent;
+                border: none;
+                height: 100%;
+                width: 100%;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+
+            .p-accordion-header-text {
+                font-weight: 500;
+                font-size: 1.25rem;
+                line-height: 160%;
+                color: #240D2E;
+                order: 1;
+            }
+
+            .p-accordion-toggle-icon {
+                order: 2;
+            }
+
+            .p-accordion-content {
+                border: none;
+                margin-top: 1rem;
+            }
+        }
+    }
+}

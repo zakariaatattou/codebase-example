@@ -1,0 +1,13 @@
+<div class="partners-container">
+     <swiper-container class="mySwiper"
+                       space-between="30"
+                       [loop]="true"
+                       [breakpoints]="breakpoints"
+                       autoplay-delay="2500"
+                       autoplay-disable-on-interaction="false">
+          <swiper-slide *ngFor="let item of content?.partners?.imgs">
+               <img [src]="environment.cmsUrl+item.image?.url"
+                    alt="">
+          </swiper-slide>
+     </swiper-container>
+</div>

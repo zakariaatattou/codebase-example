@@ -1,0 +1,66 @@
+<div class="account-type-container">
+    <div class="inner">
+        <div class="separator"></div>
+
+        <div class="text">
+            <h3>Choose your account type</h3>
+            <p>Select the account you would like to open</p>
+        </div>
+
+        <ul>
+            <li>
+                <input type="radio"
+                       name="type"
+                       value="individual"
+                       [formControl]="accountType"
+                       id="Individual">
+                <label for="Individual">
+                    <i class="pi pi-user"></i>
+
+                    <div class="details">
+                        <h4>{{"accountType.individual" | translate}}</h4>
+                        <p>Manage your own money, choose your goals, build wealth for Manage your own money, choose your
+                            goals, build wealth forown money, choose your goals, build wealth for</p>
+                    </div>
+                </label>
+            </li>
+            <li>
+                <input type="radio"
+                       name="type"
+                       value="joint"
+                       [formControl]="accountType"
+                       id="Joint">
+                <label for="Joint">
+                    <i class="pi pi-users"></i>
+
+                    <div class="details">
+                        <h4>{{"accountType.joint" | translate}}</h4>
+                        <p>Manage your own money, choose your goals, build wealth for the future.</p>
+                    </div>
+                </label>
+            </li>
+            <li>
+                <input type="radio"
+                       name="type"
+                       value="corporate"
+                       [formControl]="accountType"
+                       id="Corporate">
+                <label for="Corporate">
+                    <i class="pi pi-building"></i>
+                    <div class="details">
+                        <h4>{{"accountType.corporate" | translate}}</h4>
+                        <p>High-growth potential ventures seeking strategic partnership and capital for market
+                            expansion.
+                        </p>
+                    </div>
+                </label>
+            </li>
+        </ul>
+
+        <button class="btn btn-primary"
+                [disabled]="accountType.invalid"
+                (click)="onNext()">
+            Next
+        </button>
+    </div>
+</div>

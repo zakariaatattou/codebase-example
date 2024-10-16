@@ -1,0 +1,24 @@
+<div class="hero-container">
+    <img class="hero-shape"
+         src="/assets/images/hero-shape.png"
+         alt="">
+
+    <div class="inner">
+        <div class="text">
+            <h1>{{ content?.heroSection?.mainTitle }}</h1>
+
+            <p>
+              {{ content?.heroSection?.description }}
+            </p>
+        </div>
+
+        <div class="img">
+            <picture>
+                <source media="(min-width:991px)"
+                        [srcset]="environment.cmsUrl+content?.heroSection?.image?.url">
+                <img [src]="environment.cmsUrl+content?.heroSection?.imageMobile?.url">
+            </picture>
+
+        </div>
+    </div>
+</div>

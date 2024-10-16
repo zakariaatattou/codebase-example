@@ -1,0 +1,164 @@
+<form class="flex flex-column">
+    <!-- How do you evaluate your investment knowledge? -->
+    <div class="input-box">
+        <h3>{{ "How do you evaluate your investment knowledge?" | translate}}</h3>
+        <div class="flex gap-4 justify-content-between flex-column lg:flex-row">
+            <div class="custom-radio-input">
+                <input type="radio"
+                       name="employment-status"
+                       id="employee">
+                <label for="employee">
+                    <div class="circle"></div>
+                    {{ "Limited"}}
+                </label>
+            </div>
+            <div class="custom-radio-input">
+                <input type="radio"
+                       name="employment-status"
+                       id="self-employment">
+                <label for="self-employment">
+                    <div class="circle"></div>
+                    {{ "Good" | translate}}
+                </label>
+            </div>
+            <div class="custom-radio-input">
+                <input type="radio"
+                       name="employment-status"
+                       id="self-employment">
+                <label for="self-employment">
+                    <div class="circle"></div>
+                    {{ "Sophisticated" | translate}}
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- What is your risk tolerance and ability to absorb risk for your total investment portfolio? -->
+    <div class="input-box">
+        <h3>{{ "What is your risk tolerance and ability to absorb risk for your total investment portfolio?" |
+            translate}}</h3>
+        <div class="flex gap-4 justify-content-between flex-column lg:flex-row">
+            <div class="custom-radio-input">
+                <input type="radio"
+                       name="employment-status"
+                       id="employee">
+                <label for="employee">
+                    <div class="circle"></div>
+                    {{ "Low"}}
+                </label>
+            </div>
+            <div class="custom-radio-input">
+                <input type="radio"
+                       name="employment-status"
+                       id="self-employment">
+                <label for="self-employment">
+                    <div class="circle"></div>
+                    {{ "Medium"}}
+                </label>
+            </div>
+            <div class="custom-radio-input">
+                <input type="radio"
+                       name="employment-status"
+                       id="self-employment">
+                <label for="self-employment">
+                    <div class="circle"></div>
+                    {{ "High"}}
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- Check all the types of investments with which you have experience: -->
+    <div class="input-box">
+        <h3>{{ "Check all the types of investments with which you have experience:" | translate}}</h3>
+        <div class="flex flex-column gap-2">
+            <div class="custom-checkbox-input">
+                <p-checkbox [binary]="true"
+                            inputId="binary" />
+                <label for="employee">{{ "Savings/GIC/Money Market" | translate}}</label>
+            </div>
+            <div class="custom-checkbox-input">
+                <p-checkbox [binary]="true"
+                            inputId="binary" />
+                <label for="self-employment">{{ "Bonds/Fixed Income" | translate}}</label>
+            </div>
+            <div class="custom-checkbox-input">
+                <p-checkbox [binary]="true"
+                            inputId="binary" />
+                <label for="retired">{{ "Public Stocks/ETFs/ Mutual Funds" | translate}}</label>
+            </div>
+            <div class="custom-checkbox-input">
+                <p-checkbox [binary]="true"
+                            inputId="binary" />
+                <label for="retired">{{ "Private Investments (Mortgage funds, REITs, Hedge Funds,etc.)" | translate}}
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- What is the time horizon of your investment objective? -->
+    <div class="input-box">
+        <h3>{{ "What is the time horizon of your investment objective?" | translate}}</h3>
+        <div class="flex gap-4 justify-content-between flex-column lg:flex-row">
+            <div class="custom-radio-input">
+                <input type="radio"
+                       name="employment-status"
+                       id="employee">
+                <label for="employee">
+                    <div class="circle"></div>
+                    {{ "Less than 5 years"}}
+                </label>
+            </div>
+            <div class="custom-radio-input">
+                <input type="radio"
+                       name="employment-status"
+                       id="self-employment">
+                <label for="self-employment">
+                    <div class="circle"></div>
+                    {{ "5 to 10 years" | translate}}
+                </label>
+            </div>
+            <div class="custom-radio-input">
+                <input type="radio"
+                       name="employment-status"
+                       id="self-employment">
+                <label for="self-employment">
+                    <div class="circle"></div>
+                    {{ "More than 10 years" | translate}}
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- What is your overall investment objective? -->
+    <div class="input-box">
+        <h3>{{ "What is the time horizon of your investment objective?" | translate}}</h3>
+        <div class="flex gap-4 justify-content-between flex-column lg:flex-row">
+            <div class="custom-radio-input">
+                <input type="radio"
+                       name="employment-status"
+                       id="employee">
+                <label for="employee">
+                    <div class="circle"></div>
+                    {{ "Income"}}
+                </label>
+            </div>
+            <div class="custom-radio-input">
+                <input type="radio"
+                       name="employment-status"
+                       id="self-employment">
+                <label for="self-employment">
+                    <div class="circle"></div>
+                    {{ "Growth" | translate}}
+                </label>
+            </div>
+            <div class="custom-radio-input">
+                <input type="radio"
+                       name="employment-status"
+                       id="self-employment">
+                <label for="self-employment">
+                    <div class="circle"></div>
+                    {{ "Income & Growth" | translate}}
+                </label>
+            </div>
+        </div>
+    </div>
+</form>

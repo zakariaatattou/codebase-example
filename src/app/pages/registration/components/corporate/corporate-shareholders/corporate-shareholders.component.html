@@ -1,0 +1,73 @@
+<form class="flex flex-column"
+      [formGroup]="x">
+    <div class="input-box"
+         *ngFor="let item of x.get('shareholders')?.controls; let i = index"
+         formArrayName="shareholders">
+        <h3>{{ "Shareholder " + (i +1)}}</h3>
+        <ng-container [formGroupName]="i">
+            <!-- Ownership percentage -->
+            <div class="form-group col p-0">
+                <label for="">{{ "Ownership percentage" }}</label>
+                <input type="number"
+                       formControlName="ownerShipPercentage">
+                <!-- <div class="error"
+                     *ngIf="x.get('firstName').hasError('required') && x.get('firstName').touched">
+                    <i class="pi pi-info-circle"></i>
+                    <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+                </div> -->
+            </div>
+            <div class="flex gap-4 justify-content-between flex-column lg:flex-row">
+                <!-- First Name -->
+                <div class="form-group col p-0">
+                    <label for="">{{ "account.firstName" | translate }}</label>
+                    <input type="text"
+                           formControlName="firstName">
+                    <!-- <div class="error"
+                         *ngIf="x.get('lastName').hasError('required') && x.get('lastName').touched">
+                        <i class="pi pi-info-circle"></i>
+                        <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+                    </div> -->
+                </div>
+                <!-- Last Name -->
+                <div class="form-group col p-0">
+                    <label for="">{{ "account.lastName" | translate }}</label>
+                    <input type="text"
+                           formControlName="lastName">
+                    <!-- <div class="error"
+                     *ngIf="x.get('lastName').hasError('required') && x.get('lastName').touched">
+                    <i class="pi pi-info-circle"></i>
+                    <span>{{ "personalInformation.mandatoryField" | translate }}</span>
+                </div> -->
+                </div>
+            </div>
+            <!-- Social Insurance Number (SIN) -->
+            <div class="form-group col p-0">
+                <label for="">{{ "Social Insurance Number (SIN)" | translate }}</label>
+
+                <p-inputMask mask="999-999-999"
+                             formControlName="sin"
+                             placeholder="123-456-789" />
+                <div class="error"
+                     *ngIf="x?.get('sin')?.hasError('required') && x.get('sin').touched">
+                    <i class="pi pi-info-circle"></i>
+                    <span>{{"personalInformation.mandatoryField" | translate }}</span>
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="">{{ "account.email" | translate }}</label>
+                <input type="email"
+                       formControlName="email">
+            </div>
+
+            <div class="flex justify-content-end">
+                <button (click)="onAddShareholder()"
+                        class="btn-link btn-link-primary">
+                    Add more
+                </button>
+            </div>
+        </ng-container>
+
+    </div>
+</form>

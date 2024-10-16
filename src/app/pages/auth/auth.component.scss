@@ -1,0 +1,13 @@
+.auth-container {
+    // display: flex;
+    min-height: 100vh;
+    background-color: #fafafa;
+
+    .logo {
+        width: 100%;
+        background-color: #EDEFDC;
+        display: flex;
+        align-items: center;
+        padding: 1.25rem 1rem;
+    }
+}

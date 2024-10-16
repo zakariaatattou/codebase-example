@@ -1,0 +1,22 @@
+<div class="stats-container"
+     [style.height]="height">
+    <img [style.minHeight]="height"
+         src="/assets/images/stats-bg.svg"
+         alt="">
+    <div class="inner">
+        <div class="text">
+            <h4>{{ content?.GlobalScale?.title }}</h4>
+            <h1>{{ content?.GlobalScale?.mainTitle }}</h1>
+            <p>{{ content?.GlobalScale?.description }}</p>
+            <div class="stats">
+                <div class="stat"
+                     *ngFor="let item of content?.GlobalScale?.statistics">
+                    <span class="value">{{item.Header}}</span>
+                    <span class="label">
+                        {{item.Details}}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

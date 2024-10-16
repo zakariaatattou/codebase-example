@@ -1,0 +1,78 @@
+<div class="profile-container">
+    <!-- Header -->
+    <app-header></app-header>
+
+    <div class="inner grid gap-5">
+        <!-- Sidebar -->
+        <div class="sidebar col-3">
+            <ul>
+                <li>
+                    <a routerLinkActive="active"
+                       [routerLinkActiveOptions]="{ exact: true }"
+                       [routerLink]="'/' + webRoutes.profile"
+                       href="">
+                        <i class="pi pi-table"></i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a routerLinkActive="active"
+                       [routerLinkActiveOptions]="{ exact: true }"
+                       [routerLink]="'/' + webRoutes.profile + '/' + 'information'">
+                        <i class="pi pi-user"></i> Account Info
+                    </a>
+                </li>
+                <li>
+                    <a routerLinkActive="active"
+                       [routerLinkActiveOptions]="{ exact: true }"
+                       [routerLink]="'/' + webRoutes.profile + '/' + webRoutes.investment"
+                       href="">
+                        <i class="pi pi-chart-bar"></i> My Investments
+                    </a>
+                </li>
+                <li>
+                    <a routerLinkActive="active"
+                       [routerLinkActiveOptions]="{ exact: true }"
+                       [routerLink]="'/' + webRoutes.profile + '/' + webRoutes.advisor"
+                       href="">
+                        <i class="pi pi-users"></i> Advisor
+                    </a>
+                </li>
+                <li>
+                    <a routerLinkActive="active"
+                       [routerLinkActiveOptions]="{ exact: true }"
+                       [routerLink]="'/' + webRoutes.profile + '/' + webRoutes.watchlist"
+                       href="">
+                        <i class="pi pi-file-check"></i> Watchlist
+                    </a>
+                </li>
+            </ul>
+            <div class="profile-completion">
+                <button class="close-btn">
+                    <i class="pi pi-times"></i>
+                </button>
+                <div class="progress-circle">
+                    <span>80%</span>
+                </div>
+
+                <h3>Completion</h3>
+
+                <p>You’re almost ready to invest!</p>
+
+                <div class="actions">
+                    <button>Dismiss</button>
+                    <a href="">
+                        <button>Complete profile</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Content -->
+        <div class="col">
+            <router-outlet></router-outlet>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+</div>

@@ -1,0 +1,34 @@
+.partners-container {
+    display: flex;
+    background-color: white;
+    padding: 3.875rem 0rem;
+    justify-content: space-between;
+
+    img {
+        width: 100%;
+        max-width: 134px;
+        min-width: 134px;
+        height: auto;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+    }
+}
+
+swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+swiper-slide {
+    // background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// swiper-slide img {
+//     display: block;
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+// }

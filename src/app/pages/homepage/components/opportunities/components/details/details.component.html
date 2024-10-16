@@ -1,0 +1,208 @@
+<div class="details-container ">
+    <!-- Desktop details -->
+    <div class="desktop-details-inner hidden lg:flex grid">
+        <!-- Gallery -->
+        <div class="lg:col-5 xl:col-6">
+            <div class="gallery">
+                <ng-container *ngTemplateOutlet="gallery"></ng-container>
+                <ng-container *ngTemplateOutlet="accordion"></ng-container>
+            </div>
+        </div>
+        <!-- Details -->
+        <div class="lg:col-6 xl:col-6">
+            <div class="details">
+                <h4 class="main-title">Crowdfunds</h4>
+                <div class="company">
+                    <div class="img">
+                        <img src="/assets/images/hublot.png"
+                             alt="">
+                    </div>
+                    <h3>Ginkgo Mortgage Investment Corporation</h3>
+                </div>
+
+                <p class="description">deltaH Innovations is on a mission to improve the
+                    we enjoy cold drinks on-the-go with their patent
+                </p>
+
+                <ng-container *ngTemplateOutlet="ctaBox"></ng-container>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile details -->
+
+    <div class="flex lg:hidden mobile-details-inner">
+        <h4 class="main-title">
+            Crowdfunds
+        </h4>
+        <div class="company">
+            <div class="img">
+                <img src="/assets/images/hublot.png"
+                     alt="">
+            </div>
+            <h3>Ginkgo Mortgage Investment Corporation</h3>
+        </div>
+        <ng-container *ngTemplateOutlet="gallery"></ng-container>
+        <p class="description">deltaH Innovations is on a mission to improve the
+            we enjoy cold drinks on-the-go with their patent
+        </p>
+        <ng-container *ngTemplateOutlet="accordion"></ng-container>
+        <ng-container *ngTemplateOutlet="ctaBox"></ng-container>
+    </div>
+</div>
+
+
+<!-- Details & cta box -->
+<ng-template #ctaBox>
+    <div class="cta-box">
+        <div class="progress">
+            <span class="title">Raised</span>
+            <p>75% - 19 days left</p>
+            <p-progressBar [showValue]="false"
+                           color="#F2A413"
+                           [value]="50" />
+            <ul>
+                <li>
+                    <span class="label">Traget</span>
+                    <span class="value">3,00,0000 M</span>
+                </li>
+                <li>
+                    <span class="label">Raised</span>
+                    <span class="value">2,00,0000 M</span>
+                </li>
+                <li>
+                    <span class="label">Investors</span>
+                    <span class="value">55</span>
+                </li>
+            </ul>
+        </div>
+
+        <ul class="stats">
+            <li>
+                <span class="label">
+                    Targeted Return
+                </span>
+                <span class="value">8% - 10%, Annually</span>
+            </li>
+            <li>
+                <span class="label">
+                    Minimum Investment
+                </span>
+                <span class="value">10000 $</span>
+            </li>
+            <li>
+                <span class="label">
+                    Distribution
+                </span>
+                <span class="value">N/A</span>
+            </li>
+            <li>
+                <span class="label">
+                    Class
+                </span>
+                <span class="value">Class A</span>
+            </li>
+        </ul>
+
+        <div class="actions">
+            <button class="btn btn-primary">
+                Join to invest
+            </button>
+            <button class="btn btn-primary-outline">
+                Login
+            </button>
+        </div>
+
+        <div class="actions">
+            <button class="btn btn-grey">
+                Save for later
+            </button>
+            <button class="btn btn-grey">
+                Share
+            </button>
+        </div>
+    </div>
+</ng-template>
+<!-- Gallery -->
+<ng-template #gallery>
+    <swiper-container style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                      class="mySwiper"
+                      thumbs-swiper=".mySwiper2"
+                      space-between="10"
+                      navigation="true">
+        <swiper-slide>
+            <img src="/assets/images/details.jpg" />
+        </swiper-slide>
+        <swiper-slide>
+            <img src="/assets/images/details.jpg" />
+        </swiper-slide>
+        <swiper-slide>
+            <img src="/assets/images/details.jpg" />
+        </swiper-slide>
+    </swiper-container>
+
+    <swiper-container class="mySwiper2"
+                      space-between="10"
+                      slides-per-view="4"
+                      free-mode="true"
+                      watch-slides-progress="true">
+        <swiper-slide>
+            <img src="/assets/images/details.jpg" />
+        </swiper-slide>
+        <swiper-slide>
+            <img src="/assets/images/details.jpg" />
+        </swiper-slide>
+        <swiper-slide>
+            <img src="/assets/images/details.jpg" />
+        </swiper-slide>
+    </swiper-container>
+</ng-template>
+
+<!-- Accordion -->
+<ng-template #accordion>
+    <p-accordion [activeIndex]="0">
+        <p-accordionTab header="Key Information">
+            <ul>
+                <li>
+                    <span class="label">Issuer Name:</span>
+                    <span class="value">Mohamed ahmed</span>
+                </li>
+                <li>
+                    <span class="label">Address:</span>
+                    <span class="value">243 Consumers Rd #203, Toronto, Ontario, M2J 4W8</span>
+                </li>
+                <li>
+                    <span class="label">Contact::</span>
+                    <span class="value">(647) 660-2293</span>
+                </li>
+            </ul>
+        </p-accordionTab>
+        <p-accordionTab header="Description">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad maiores ex sit.
+                Pariatur,
+                quas quibusdam
+                accusamus itaque quis recusandae vero nihil ipsa delectus iste, laudantium aliquid
+                accusantium
+                repudiandae rerum magnam! </p>
+        </p-accordionTab>
+        <p-accordionTab header="Documents">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus id nesciunt
+                voluptate earum ab
+                fuga accusantium, doloribus placeat optio voluptatem consequuntur veniam labore
+                repellendus
+                laudantium sed quis nisi architecto illum?
+            </p>
+        </p-accordionTab>
+        <p-accordionTab header="Questions we ask">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus id nesciunt
+                voluptate earum ab
+                fuga accusantium, doloribus placeat optio voluptatem consequuntur veniam labore
+                repellendus
+                laudantium sed quis nisi architecto illum?
+            </p>
+        </p-accordionTab>
+    </p-accordion>
+</ng-template>

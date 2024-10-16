@@ -1,0 +1,45 @@
+.success-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .inner {
+        max-width: 552px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        img {
+            width: 6.9375rem;
+            height: 6.9375rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .text-1 {
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: #1D1F1F;
+            margin-bottom: 1rem;
+        }
+
+
+        .text-2 {
+            font-weight: 500;
+            font-size: 1.5rem;
+            line-height: 140%;
+            color: #666666;
+            margin-bottom: 2.125rem;
+        }
+
+        .text-3 {
+            font-weight: 500;
+            font-size: 1.5rem;
+            line-height: 140%;
+            color: #666666;
+            margin-bottom: 3.0625rem;
+        }
+    }
+}

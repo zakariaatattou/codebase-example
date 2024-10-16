@@ -1,0 +1,192 @@
+<header [class.collapsed]="collapsed">
+
+    <!-- Desktop nav -->
+    <div class="inner">
+        <!-- Logo and nav items -->
+        <div class="first-col">
+            <a class="logo"
+               [routerLink]="'/' + routes.home">
+                <img src="assets/images/logo.svg"
+                     alt="">
+            </a>
+
+            <ul class="links-list">
+                <li>
+                    <a [routerLink]="'/' + routes.home">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <p-menu #menu
+                            class="investing-menu"
+                            [model]="investingItems"
+                            [popup]="true">
+                        <ng-template pTemplate="item"
+                                     let-item>
+                            <a [routerLink]="item.routerLink">
+                                <span class="title">{{ item.label }}</span>
+                                <p class="description">{{item.description}}</p>
+                            </a>
+                        </ng-template>
+                    </p-menu>
+
+
+                    <a href="javascript:void(0)"
+                       (click)="menu.toggle($event)">
+                        Investing
+                        <i class="pi pi-chevron-down"></i>
+                    </a>
+
+                </li>
+                <li>
+                    <a href="">
+                        About us
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        Contact us
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- Auth and language links -->
+        <ul class="auth-links-list"
+            *ngIf="!userService.isAuthenticated(); else profile">
+            <!--            <li>-->
+            <!--                <a href="javascript:void(0)"-->
+            <!--                   (click)="langMenu.toggle($event)">-->
+            <!--                    <i class="pi pi-globe"></i>-->
+            <!--                    EN-->
+            <!--                    <p-menu #langMenu-->
+            <!--                            class="lang-menu"-->
+            <!--                            [model]="langItems"-->
+            <!--                            [popup]="true">-->
+            <!--                        <ng-template pTemplate="item"-->
+            <!--                                     let-item>-->
+            <!--                            <button>-->
+            <!--                                <img [src]="'/assets/icons/' + item.label + '.svg'"-->
+            <!--                                     alt="">-->
+            <!--                                <span class="title">{{ item.label }}</span>-->
+            <!--                            </button>-->
+            <!--                        </ng-template>-->
+            <!--                    </p-menu>-->
+
+            <!--                </a>-->
+            <!--            </li>-->
+            <li>
+                <a [routerLink]="'/' + routes.auth + '/' + routes.login">
+                    <button class="btn btn-primary-outline">Login </button>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="'/' + routes.auth + '/' + routes.signup">
+                    <button class="btn btn-primary">Sign up </button>
+                </a>
+            </li>
+        </ul>
+
+        <!-- Profile -->
+        <ng-template #profile>
+            <ul class="profile-list">
+                <li>
+                    <button class="notification-btn">
+                        <i class="pi pi-bell"></i>
+                    </button>
+
+                </li>
+                <li>
+                    <button class="profile-btn"
+                            (click)="profileMenu.toggle($event)">
+                        <span class="initials">{{userService?.getUserInitials()}}</span>
+                        <div class="text">
+                            <span class="name">{{user?.firstName + " " + user?.lastName}}</span>
+                            <span class="type">{{user?.userType}}</span>
+                        </div>
+                        <i class="pi pi-chevron-down"></i>
+                    </button>
+
+                    <p-menu #profileMenu
+                            class="profile-menu"
+                            [model]="profileItems"
+                            [popup]="true">
+                        <ng-template pTemplate="item"
+                                     let-item>
+                            <a [routerLink]="item.routerLink">
+                                <i [class]="'pi ' + item?.icon "></i>
+                                <span class="title">{{ item.label }}</span>
+                            </a>
+                        </ng-template>
+                    </p-menu>
+                </li>
+            </ul>
+
+        </ng-template>
+
+
+
+
+        <!-- Mobile Nav Button -->
+        <button (click)="collapsed = !collapsed"
+                class="mobile-nav-btn">
+            <i class="pi pi-bars"></i>
+        </button>
+
+
+    </div>
+
+    <!-- Mobile nav -->
+    <div class="mobile-nav">
+        <ul>
+            <li>
+                <a href="">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)"
+                   (click)="investingMenuCollapsed = !investingMenuCollapsed">
+                    Investing
+                    <i class="pi pi-chevron-down"
+                       *ngIf="!investingMenuCollapsed"></i>
+                    <i class="pi pi-chevron-up"
+                       *ngIf="investingMenuCollapsed"></i>
+                </a>
+
+                <p-menu #mobileMenu
+                        *ngIf="investingMenuCollapsed"
+                        class="mobile-menu"
+                        [model]="investingItems">
+                    <ng-template pTemplate="item"
+                                 let-item>
+                        <a [routerLink]="item.routerLink">
+                            <span class="title">{{ item.label }}</span>
+                            <p class="description">{{item.description}}</p>
+                        </a>
+                    </ng-template>
+                </p-menu>
+            </li>
+            <li>
+                <a href="">
+                    About us
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    Contact us
+                </a>
+            </li>
+        </ul>
+        <div class="auth-links">
+            <a class="w-full"
+               [routerLink]="'/' + routes.auth + '/' + routes.login"> <button
+                        class="btn btn-primary-outline">Login</button></a>
+            <a class="w-full"
+               [routerLink]="'/' + routes.auth + '/' + routes.login">
+                <button class="btn btn-primary">Sign up</button>
+            </a>
+        </div>
+    </div>
+</header>

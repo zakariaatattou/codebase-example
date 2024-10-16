@@ -1,0 +1,194 @@
+<form [formGroup]="x"
+      class="flex flex-column">
+    <!-- Annual Individual Income for each of the Last 2 Years -->
+    <div class="input-box">
+        <h3>{{ "financialInformation.annualIndividual" | translate }}</h3>
+        <div class="flex gap-2 justify-content-between flex-column lg:flex-row">
+            <div class="custom-radio-input"
+                 *ngFor="let item of lookupService.getAnnualIndividualIncomeList(); let i = index">
+                <input type="radio"
+                       [value]="item.id"
+                       formControlName="annualIndividualIncome"
+                       [id]="'annualIndividualIncome' + i">
+                <label [for]="'annualIndividualIncome' + i">
+                    <div class="circle"></div>
+                    {{item.name}}
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- Annual Household Income for each of the Last 2 Years -->
+    <div class="input-box">
+        <h3>{{ "Annual Household Income for each of the Last 2 Years" | translate }}</h3>
+        <div class="flex gap-2 justify-content-between flex-column lg:flex-row">
+            <div class="custom-radio-input"
+                 *ngFor="let item of lookupService.getAnnualHouseholdIncomeList(); let i = index">
+                <input type="radio"
+                       [value]="item.id"
+                       formControlName="annualHouseholdIncome"
+                       [id]="'annualHouseholdIncome' + i">
+                <label [for]="'annualHouseholdIncome' + i">
+                    <div class="circle"></div>
+                    {{item.name}}
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- Estimated total net financial assets (include spouse/partner) -->
+    <div class="input-box">
+        <h3>{{ "financialInformation.estimatedTotal" | translate }}</h3>
+        <div class="flex gap-2 justify-content-between flex-column lg:flex-row">
+            <div class="custom-radio-input"
+                 *ngFor="let item of lookupService.getFinancialAssetsIncomeList(); let i = index">
+                <input type="radio"
+                       [value]="item.id"
+                       formControlName="totalNetAssets"
+                       [id]="'totalNetAssets' + i">
+                <label [for]="'totalNetAssets' + i">
+                    <div class="circle"></div>
+                    {{item.name}}
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- Composition of financial assets (Optional)  -->
+    <div class="input-box">
+        <h3>{{ "financialInformation.compositionOfFinancialAssets" | translate }} </h3>
+        <div class="form-group form-group-percentage">
+            <label for="">{{ "financialInformation.cashGICMoneyMarket" | translate }} <i
+                   class="pi pi-info-circle"></i></label>
+            <div>
+                <input type="text"
+                       formControlName="cashGIC"
+                       placeholder="$"
+                       id="">
+                <span>{{percentages['cashGIC'] || 0}}%</span>
+            </div>
+        </div>
+        <div class="form-group form-group-percentage">
+            <label for="">{{ "financialInformation.bondsFixedIncome" | translate }}</label>
+            <div>
+                <input type="text"
+                       formControlName="bonds"
+                       placeholder="$"
+                       id="">
+                <span>{{percentages['bonds'] || 0}}%</span>
+            </div>
+        </div>
+        <div class="form-group form-group-percentage">
+            <label for="">{{ "financialInformation.publicStocksMutualFunds" | translate }}</label>
+            <div>
+                <input type="text"
+                       formControlName="publicStocks"
+                       placeholder="$"
+                       id="">
+                <span>{{percentages['publicStocks'] || 0}}%</span>
+            </div>
+        </div>
+        <div class="form-group form-group-percentage">
+            <label for="">{{ "financialInformation.alternativePrivateInvestment" | translate }}</label>
+            <div>
+                <input type="text"
+                       formControlName="alternative"
+                       placeholder="$"
+                       id="">
+                <span>{{percentages['alternative'] || 0}}%</span>
+            </div>
+        </div>
+        <div class="form-group form-group-percentage">
+            <label for="">{{ "financialInformation.total" | translate }}</label>
+            <div>
+                <input type="text"
+                       readonly
+                       [formControl]="total"
+                       placeholder="$"
+                       id="">
+            </div>
+        </div>
+    </div>
+    <!-- Estimated Net Worth (include spouse/partner) -->
+    <div class="input-box">
+        <h3>
+            {{ "financialInformation.estimatedNetWorth" | translate }}
+        </h3>
+        <div class="flex gap-2 justify-content-between flex-column lg:flex-row">
+            <div class="custom-radio-input"
+                 *ngFor="let item of lookupService.getNetWorthList(); let i = index">
+                <input type="radio"
+                       [value]="item.id"
+                       formControlName="totalNetWorth"
+                       [id]="'totalNetWorth' + i">
+                <label [for]="'totalNetWorth' + i">
+                    <div class="circle"></div>
+                    {{item.name}}
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- Did you purchase any private investment in the last 12 months? -->
+    <div class="input-box">
+        <h3>
+            {{ "financialInformation.purchasePrivateInvestment" | translate }}
+        </h3>
+        <div class="flex gap-2 justify-content-between flex-column lg:flex-row">
+            <div class="custom-radio-input">
+                <input type="radio"
+                       formControlName="havePrivateInvestment"
+                       [value]="true"
+                       id="true">
+                <label for="true">
+                    <div class="circle"></div>
+                    {{ "financialInformation.yes" | translate }}
+                </label>
+            </div>
+            <div class="custom-radio-input">
+                <input type="radio"
+                       formControlName="havePrivateInvestment"
+                       (change)="onPrivateInvestmentChange($event)"
+                       [value]="false"
+                       id="false">
+                <label for="false">
+                    <div class="circle"></div>
+                    {{ "financialInformation.no" | translate }}
+                </label>
+            </div>
+        </div>
+        <!-- Amount & date -->
+        <ng-container *ngIf="x?.get('havePrivateInvestment')?.value">
+            <div class="flex gap-2 justify-content-between flex-column lg:flex-row"
+                 *ngFor="let item of x?.get('investorPrivateInvestments')['controls']; let i = index"
+                 formArrayName="investorPrivateInvestments">
+                <ng-container [formGroupName]="i">
+                    <!-- Amount -->
+                    <div class="form-group col p-0">
+                        <label for="">{{ "Amount" | translate }}</label>
+                        <input formControlName="amount"
+                               placeholder="$"
+                               type="text">
+                    </div>
+                    <!-- Date -->
+                    <div class="form-group col p-0">
+                        <label for="">{{ "Date" | translate }}</label>
+                        <div class="flex gap-4">
+                            <p-calendar formControlName="date"
+                                        class="w-full"
+                                        [iconDisplay]="'input'"
+                                        [showIcon]="true"
+                                        inputId="icondisplay" />
+                            <button *ngIf="(i + 1) === x?.get('investorPrivateInvestments')['controls'].length"
+                                    (click)="onAddPrivateInvestment()"
+                                    class="btn-link btn-link-primary">Add more</button>
+                            <button *ngIf="x?.get('investorPrivateInvestments')['controls'].length !== 1"
+                                    (click)="onRemovePrivateInvestment(i)"
+                                    class="btn-link btn-link-danger">Remove</button>
+
+                        </div>
+                    </div>
+                </ng-container>
+
+            </div>
+        </ng-container>
+
+
+    </div>
+</form>
